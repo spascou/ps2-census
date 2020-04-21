@@ -57,7 +57,7 @@ class Query:
         return res.json()
 
     def _add_parameter(self, key: str, value: Union[str, int]):
-        self.parameters[key] = value
+        self.parameters[f"{key}"] = f"{value}"
 
     def filter(
         self,

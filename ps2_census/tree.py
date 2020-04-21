@@ -15,7 +15,7 @@ class Tree:
         return TREE_ITEM_DELIMITER.join((f"{k}:{v}" for k, v in self.items.items()))
 
     def _add_item(self, key: TreeKey, value: Union[str, int]):
-        self.items[key.value] = value
+        self.items[f"{key.value}"] = f"{value}"
 
     def list(self, arg: Literal[1, 0]):
         self._add_item(TreeKey.LIST, arg)

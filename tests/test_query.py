@@ -79,19 +79,19 @@ def test_case():
 def test_limit():
     query = Query(Collection.ABILITY).limit(100)
 
-    assert query.parameters == {"c:limit": 100}
+    assert query.parameters == {"c:limit": "100"}
 
 
 def test_limit_per_db():
     query = Query(Collection.ABILITY).limit_per_db(100)
 
-    assert query.parameters == {"c:limitPerDB": 100}
+    assert query.parameters == {"c:limitPerDB": "100"}
 
 
 def test_start():
     query = Query(Collection.ABILITY).start(100)
 
-    assert query.parameters == {"c:start": 100}
+    assert query.parameters == {"c:start": "100"}
 
 
 def test_include_null():

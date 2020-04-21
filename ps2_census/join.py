@@ -14,7 +14,7 @@ class Join:
 
     def __str__(self) -> str:
         res = JOIN_ITEM_DELIMITER.join(
-            [self.collection.value] + [f"{k}:{v}" for k, v in self.items.items()]
+            [f"{self.collection.value}"] + [f"{k}:{v}" for k, v in self.items.items()]
         )
 
         if self.nested_join:
@@ -29,7 +29,7 @@ class Join:
         return self
 
     def _add_item(self, key: JoinKey, value: Union[str, int]):
-        self.items[key.value] = value
+        self.items[f"{key.value}"] = f"{value}"
 
     def on(self, arg: str):
         self._add_item(JoinKey.ON, arg)
