@@ -1,4 +1,4 @@
-from typing import Literal, Optional, Tuple, Union
+from typing import Literal, Optional, Tuple, Union, Dict, List
 
 import requests
 
@@ -22,7 +22,7 @@ class Query:
     endpoint: str
     service_id: str
     namespace: Namespace
-    parameters: dict
+    parameters: Dict[str, List[str]]
 
     def __init__(
         self,
@@ -57,7 +57,13 @@ class Query:
         return res.json()
 
     def _add_parameter(self, key: str, value: Union[str, int]):
-        self.parameters[f"{key}"] = f"{value}"
+        key = f"{key}"
+        value = f"{value}"
+
+        if key not in self.parameters:
+            self.parameters[key] = [value]
+        else:
+            self.parameters[key].append(value)
 
     def filter(
         self,

@@ -25,8 +25,8 @@ def test_filter():
     )
 
     assert query.parameters == {
-        "fieldname": "fieldvalue",
-        "anotherfieldname": "^anotherfieldvalue",
+        "fieldname": ["fieldvalue"],
+        "anotherfieldname": ["^anotherfieldvalue"],
     }
 
 
@@ -34,7 +34,7 @@ def test_show():
     query = Query(Collection.ABILITY).show("field1", "field2")
 
     assert query.parameters == {
-        "c:show": "field1,field2",
+        "c:show": ["field1,field2"],
     }
 
 
@@ -42,7 +42,7 @@ def test_hide():
     query = Query(Collection.ABILITY).hide("field1", "field2")
 
     assert query.parameters == {
-        "c:hide": "field1,field2",
+        "c:hide": ["field1,field2"],
     }
 
 
@@ -52,7 +52,7 @@ def test_sort():
     )
 
     assert query.parameters == {
-        "c:sort": "field1,field2:1,field3:-1",
+        "c:sort": ["field1,field2:1,field3:-1"],
     }
 
 
@@ -60,7 +60,7 @@ def test_has():
     query = Query(Collection.ABILITY).has("field1", "field2")
 
     assert query.parameters == {
-        "c:has": "field1,field2",
+        "c:has": ["field1,field2"],
     }
 
 
@@ -69,29 +69,29 @@ def test_case():
     query_f = Query(Collection.ABILITY).case(False)
 
     assert query_t.parameters == {
-        "c:case": "true",
+        "c:case": ["true"],
     }
     assert query_f.parameters == {
-        "c:case": "false",
+        "c:case": ["false"],
     }
 
 
 def test_limit():
     query = Query(Collection.ABILITY).limit(100)
 
-    assert query.parameters == {"c:limit": "100"}
+    assert query.parameters == {"c:limit": ["100"]}
 
 
 def test_limit_per_db():
     query = Query(Collection.ABILITY).limit_per_db(100)
 
-    assert query.parameters == {"c:limitPerDB": "100"}
+    assert query.parameters == {"c:limitPerDB": ["100"]}
 
 
 def test_start():
     query = Query(Collection.ABILITY).start(100)
 
-    assert query.parameters == {"c:start": "100"}
+    assert query.parameters == {"c:start": ["100"]}
 
 
 def test_include_null():
@@ -99,10 +99,10 @@ def test_include_null():
     query_f = Query(Collection.ABILITY).include_null(False)
 
     assert query_t.parameters == {
-        "c:includeNull": "true",
+        "c:includeNull": ["true"],
     }
     assert query_f.parameters == {
-        "c:includeNull": "false",
+        "c:includeNull": ["false"],
     }
 
 
@@ -110,7 +110,7 @@ def test_lang():
     query = Query(Collection.ABILITY).lang("en")
 
     assert query.parameters == {
-        "c:lang": "en",
+        "c:lang": ["en"],
     }
 
 
@@ -118,14 +118,22 @@ def test_join():
     join = Join(Collection.ACHIEVEMENT)
     query = Query(Collection.ABILITY).join(join)
 
-    assert query.parameters == {"c:join": str(join)}
+    assert query.parameters == {"c:join": [str(join)]}
+
+
+def test_multi_join():
+    join_1 = Join(Collection.ACHIEVEMENT)
+    join_2 = Join(Collection.CHARACTER)
+    query = Query(Collection.ABILITY).join(join_1).join(join_2)
+
+    assert query.parameters == {"c:join": [str(join_1), str(join_2)]}
 
 
 def test_tree():
     tree = Tree("somefield")
     query = Query(Collection.ABILITY).tree(tree)
 
-    assert query.parameters == {"c:tree": str(tree)}
+    assert query.parameters == {"c:tree": [str(tree)]}
 
 
 def test_timing():
@@ -133,10 +141,10 @@ def test_timing():
     query_f = Query(Collection.ABILITY).timing(False)
 
     assert query_t.parameters == {
-        "c:timing": "true",
+        "c:timing": ["true"],
     }
     assert query_f.parameters == {
-        "c:timing": "false",
+        "c:timing": ["false"],
     }
 
 
@@ -145,17 +153,17 @@ def test_exact_match_first():
     query_f = Query(Collection.ABILITY).exact_match_first(False)
 
     assert query_t.parameters == {
-        "c:exactMatchFirst": "true",
+        "c:exactMatchFirst": ["true"],
     }
     assert query_f.parameters == {
-        "c:exactMatchFirst": "false",
+        "c:exactMatchFirst": ["false"],
     }
 
 
 def test_distinct():
     query = Query(Collection.ABILITY).distinct("somefield")
 
-    assert query.parameters == {"c:distinct": "somefield"}
+    assert query.parameters == {"c:distinct": ["somefield"]}
 
 
 def test_retry():
@@ -163,8 +171,8 @@ def test_retry():
     query_f = Query(Collection.ABILITY).retry(False)
 
     assert query_t.parameters == {
-        "c:retry": "true",
+        "c:retry": ["true"],
     }
     assert query_f.parameters == {
-        "c:retry": "false",
+        "c:retry": ["false"],
     }
