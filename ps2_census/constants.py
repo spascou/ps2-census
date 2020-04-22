@@ -1,6 +1,7 @@
 from enum import Enum
 
 CENSUS_ENDPOINT = "http://census.daybreakgames.com"
+PUSH_ENDPOINT = "wss://push.planetside2.com/streaming"
 
 SERVICE_ID_PREFIX = "s:"
 EXAMPLE_SERVICE_ID = f"example"
@@ -189,3 +190,51 @@ class TreeKey(str, Enum):
     START = "start"
 
 
+class CharacterEvent(str, Enum):
+    ACHIEVEMENT_EARNED = "AchievementEarned"
+    BATTLE_RANK_UP = "BattleRankUp"
+    DEATH = "Death"
+    GAIN_EXPERIENCE = "GainExperience"
+    ITEM_ADDED = "ItemAdded"
+    PLAYER_FACILITY_CAPTURE = "PlayerFacilityCapture"
+    PLAYER_FACILITY_DEFEND = "PlayerFacilityDefend"
+    PLAYER_LOGIN = "PlayerLogin"
+    PLAYER_LOGOUT = "PlayerLogout"
+    SKILL_ADDED = "SkillAdded"
+    VEHICLE_DESTROY = "VehicleDestroy"
+
+
+class WorldEvent(str, Enum):
+    CONTINENT_LOCK = "ContinentLock"
+    CONTINENT_UNLOCK = "ContinentUnlock"
+    FACILITY_CONTROL = "FacilityControl"
+    METAGAME_EVENT = "MetagameEvent"
+    PLAYER_LOGIN = "PlayerLogin"
+    PLAYER_LOGOUT = "PlayerLogout"
+
+
+class GenericEvent(str, Enum):
+    ALL = "all"
+
+
+class EventStreamAction(str, Enum):
+    SUBSCRIBE = "subscribe"
+    ECHO = "echo"
+    CLEAR_SUBSCRIBE = "clearSubscribe"
+    RECENT_CHARACTER_IDS = "recentCharacterIds"
+    RECENT_CHARACTER_IDS_COUNT = "recentCharacterIdsCount"
+
+
+class EventStreamService(str, Enum):
+    EVENT = "event"
+
+
+class EventStreamWorld(str, Enum):
+    JAEGER = "19"
+    EMERALD = "17"
+    CONNERY = "1"
+    MILLER = "10"
+    COBALT = "13"
+    SOLTECH = "40"
+    BRIGGS = "25"
+    ALL = "all"
