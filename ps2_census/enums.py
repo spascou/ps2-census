@@ -47,6 +47,32 @@ class ItemType(IntEnum):
     LEGACY_IMPLANT = 46
 
 
+class ItemCategory(IntEnum):
+    KNIFE = 2
+    PISTOL = 3
+    SHOTGUN = 4
+    SMG = 5
+    LMG = 6
+    ASSAULT_RIFLE = 7
+    CARBINE = 8
+    AV_MAX_LEFT = 9
+    AI_MAX_LEFT = 10
+    SNIPER_RIFLE = 11
+    SCOUT_RIFLE = 12
+    ROCKET_LAUNCHER = 13
+    HEAVY_WEAPON = 14
+    FLAMETHROWER_MAX = 15
+    FLAK_MAX = 16
+    GRENADE = 17
+    EXPLOSIVE = 18
+    BATTLE_RIFLE = 19
+    AA_MAX_RIGHT = 20
+    AV_MAX_RIGHT = 21
+    AI_MAX_RIGHT = 22
+    AA_MAX_LEFT = 23
+    CROSSBOW = 24
+
+
 class MetagameEventState(IntEnum):
     STARTED = 135
     RESTARTED = 136
