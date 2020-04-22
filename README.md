@@ -60,7 +60,7 @@ query.get()
 > {'item_list': [{...}, {...}, ...], 'returned': 30}
 ```
 
-### Single join
+### Simple join
 
 In order to perform joins instantiate the `Join` class with a `Collection` and pass it to the `Query`:
 ```
@@ -79,11 +79,11 @@ query: Query = (
 )
 ```
 
-### Nested join
+### Deeply nested join
 
-Nested join are necessary in order to access data structures deeper in the collections tree.
-To nest joins, instantiate the `Join` class multiple times and combine them through `join1.nest(join2)`
-where `join2` is nested within `join1`:
+Deeply nested join are necessary in order to access data structures deeper in the collections tree.
+To deeply nest joins, instantiate the `Join` class multiple times and combine them through
+`join1.nest(join2.nest(join3))` where `join3` is nested within `join2` and `join2` is nested within `join1`:
 ```
 from ps2_census import Collection, Join, Query
 
@@ -94,11 +94,18 @@ item_to_weapon_join: Join = (
     .inject_at("item_to_weapon")
 )
 
-weapon_join: Join (
+weapon_join: Join = (
     Join(Collection.WEAPON)
     .on("weapon_id")
     .to("weapon_id")
     .inject_at("weapon")
+)
+
+weapon_to_fire_group_join: Join = (
+    Join(Collection.WEAPON_TO_FIRE_GROUP)
+    .on("weapon_id")
+    .to("weapon_id")
+    .inject_at("weapon_to_fire_group")
 )
 
 query: Query = (
@@ -106,7 +113,9 @@ query: Query = (
     .filter("item_type_id", ItemType.WEAPON)
     .join(
         item_to_weapon_join.nest(
-            weapon_join
+            weapon_join.nest(
+                weapon_to_fire_group_join
+            )
         )
     )
 )
@@ -114,6 +123,39 @@ query: Query = (
 
 For a deep join you might find it easier to first create the `Join` instances then nest them
 as shown above without having too much indentation depth.
+
+
+### Lateraly nested join
+
+Lateraly nested joins are necessary in order to join between multiple collections at the same depth
+in the collections tree.
+To lateraly nest joins, instantiate the `Join` class multiple times and combine them through
+`join1.nest(join2).nest(join3)` where `join2` and `join3` are nested within `join1`:
+
+```
+from ps2_census import Collection, Join, Query
+
+parent_join: Join = (
+    Join(Collection.PARENT)
+)
+
+child_1_join: Join (
+    Join(Collection.CHILD_1)
+)
+
+child_2_join: Join (
+    Join(Collection.CHILD_1)
+)
+
+query: Query = (
+    Query(Collection.COLLECTION)
+    .join(
+        parent_join
+        .nest(child_1_join)
+        .nest(child_2_join)
+    )
+)
+```
 
 ### Tree
 
@@ -187,7 +229,7 @@ stream: EventStream = await EventStream(service_id=YOUR_SERVICE_ID)
 
 Then, subscribe to events:
 ```
-from ps2_census inport CharacterEvent, WorldEvent, EventStreamWorld
+from ps2_census import CharacterEvent, WorldEvent, EventStreamWorld
 
 await stream.subscribe(
     worlds=[EventStreamWorld.XXX, EventStreamWorld.YYY],

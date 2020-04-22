@@ -41,9 +41,25 @@ def test_outer():
     assert str(join) == "ability^outer:1"
 
 
-def test_nest():
+def test_simple_nest():
     join = Join(Collection.ABILITY).nest(Join(Collection.ACHIEVEMENT))
     assert str(join) == "ability(achievement)"
+
+
+def test_depth_nest():
+    join = Join(Collection.ABILITY).nest(
+        Join(Collection.ACHIEVEMENT).nest(Join(Collection.CURRENCY))
+    )
+    assert str(join) == "ability(achievement(currency))"
+
+
+def test_lateral_nest():
+    join = (
+        Join(Collection.ABILITY)
+        .nest(Join(Collection.ACHIEVEMENT))
+        .nest(Join(Collection.CURRENCY))
+    )
+    assert str(join) == "ability(achievement)(currency)"
 
 
 def test_items_nest():

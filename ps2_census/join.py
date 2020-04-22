@@ -6,26 +6,23 @@ from .constants import JOIN_ITEM_DELIMITER, JOIN_VALUE_DELIMITER, Collection, Jo
 class Join:
     items: dict
     collection: Collection
+    nested_joins: list
 
     def __init__(self, arg: Collection):
         self.collection = arg
         self.items = {}
-        self.nested_join = None
+        self.nested_joins = []
 
     def __str__(self) -> str:
         res = JOIN_ITEM_DELIMITER.join(
             [f"{self.collection.value}"] + [f"{k}:{v}" for k, v in self.items.items()]
         )
 
-        if self.nested_join:
-            nested_res = self.nested_join.__str__()
-            return f"{res}({nested_res})"
-        else:
-            return res
+        return f"{res}" + "".join((f"({n.__str__()})" for n in self.nested_joins))
 
     def nest(self, other):
         assert isinstance(other, Join)
-        self.nested_join = other
+        self.nested_joins.append(other)
         return self
 
     def _add_item(self, key: JoinKey, value: Union[str, int]):
