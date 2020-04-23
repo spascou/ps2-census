@@ -1,4 +1,4 @@
-from typing import Literal, Optional, Tuple, Union, Dict, List
+from typing import Dict, List, Literal, Optional, Tuple, Union
 
 import requests
 
@@ -40,18 +40,26 @@ class Query:
     def _get_url(self, verb: Verb) -> str:
         return f"{self.endpoint}/{self.service_id}/{verb}/{self.namespace}/{self.collection}"
 
-    def get(self) -> dict:
+    def get(self, print_request_url: bool = False) -> dict:
         res: requests.Response = requests.get(
             self._get_url(Verb.GET), params=self.parameters
         )
+
+        if print_request_url is True:
+            print(res.request.url)
+
         res.raise_for_status()
 
         return res.json()
 
-    def count(self) -> dict:
+    def count(self, print_request_url: bool = False) -> dict:
         res: requests.Response = requests.get(
             self._get_url(Verb.COUNT), params=self.parameters
         )
+
+        if print_request_url is True:
+            print(res.request.url)
+
         res.raise_for_status()
 
         return res.json()
@@ -84,11 +92,9 @@ class Query:
         self._add_parameter(key, FIELD_SEPARATOR.join(args))
         return self
 
-    def sort(self, *args: Tuple[str, Optional[Literal[1, -1]]]):
+    def sort(self, *args: Tuple[str, Literal[1, -1]]):
         key = command_key(Command.SORT)
-        value = FIELD_SEPARATOR.join(
-            (f"{a[0]}" if a[1] is None else f"{a[0]}:{a[1]}" for a in args)
-        )
+        value = FIELD_SEPARATOR.join((f"{a[0]}:{a[1]}" for a in args))
         self._add_parameter(key, value)
         return self
 

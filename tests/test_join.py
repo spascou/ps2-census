@@ -46,7 +46,7 @@ def test_simple_nest():
     assert str(join) == "ability(achievement)"
 
 
-def test_depth_nest():
+def test_deep_nest():
     join = Join(Collection.ABILITY).nest(
         Join(Collection.ACHIEVEMENT).nest(Join(Collection.CURRENCY))
     )
@@ -59,13 +59,38 @@ def test_lateral_nest():
         .nest(Join(Collection.ACHIEVEMENT))
         .nest(Join(Collection.CURRENCY))
     )
-    assert str(join) == "ability(achievement)(currency)"
+    assert str(join) == "ability(achievement,currency)"
 
 
-def test_items_nest():
+def test_items_simple_nest():
     join = (
         Join(Collection.ABILITY)
         .on("parent")
         .nest(Join(Collection.ACHIEVEMENT).on("child"))
     )
     assert str(join) == "ability^on:parent(achievement^on:child)"
+
+
+def test_items_deep_nest():
+    join = (
+        Join(Collection.ABILITY)
+        .on("parent")
+        .nest(
+            Join(Collection.ACHIEVEMENT)
+            .on("child")
+            .nest(Join(Collection.CURRENCY).on("grandchild"))
+        )
+    )
+    assert (
+        str(join) == "ability^on:parent(achievement^on:child(currency^on:grandchild))"
+    )
+
+
+def test_items_lateral_nest():
+    join = (
+        Join(Collection.ABILITY)
+        .on("parent")
+        .nest(Join(Collection.ACHIEVEMENT).on("child"))
+        .nest(Join(Collection.CURRENCY).on("sibling"))
+    )
+    assert str(join) == "ability^on:parent(achievement^on:child,currency^on:sibling)"

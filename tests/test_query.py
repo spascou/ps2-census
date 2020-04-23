@@ -48,11 +48,11 @@ def test_hide():
 
 def test_sort():
     query = Query(Collection.ABILITY).sort(
-        ("field1", None), ("field2", 1), ("field3", -1)
+        ("field1", 1), ("field2", -1)
     )
 
     assert query.parameters == {
-        "c:sort": ["field1,field2:1,field3:-1"],
+        "c:sort": ["field1:1,field2:-1"],
     }
 
 

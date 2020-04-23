@@ -9,7 +9,7 @@ ps2-census is a low-level client for Daybreak's Planetside 2 Census API written 
 - Access common enums directly
 - Subscribe to event streams
 
-By default the `s:example` service ID is used; however it is not recommended for production.
+By default the `example` service ID is used; however it is not recommended for production.
 You should get your own service ID from the webside below and supply it to the client whenever needed.
 
 More information about the Census API is available on the official Census documentation [here](http://census.daybreakgames.com/).
@@ -26,25 +26,53 @@ the quirks of this particular API as this knowledge is necessary to use ps2-cens
 Queries are made on collections with optional joins on other collections as well as various
 commands that alter the output.
 
+A Census API collection is analog to a relation in a generic relational database system, and a
+Census API join is analog to a join between these relations.
+
 ### Basic query
 
-To build a query, instantiate the `Query` class with a `Collection` and your service ID:
+To build a query, instantiate the `Query` class with a `Collection` (and your service ID,
+though it will be omitted in next examples for conciseness):
 ```
 from ps2_census import Collection, Query
 
 query: Query = Query(Collection.ITEM, service_id=YOUR_SERVICE_ID)
 ```
 
-Chain methods to alter the query further. Available methods are those detailed on the
-official Census API documentation website.
+Chain methods to alter the query further:
 ```
 query: Query = (
-    Query(Collection.ITEM, service_id=YOUR_SERVICE_ID)
+    Query(Collection.ITEM)
     .lang("en")
     .sort(("item_id", 1), ("faction_id", -1))
     .limit(30)
+    [...]
 )
 ```
+
+Available methods are:
+- `filter(field: str, value: Union[str, int], modifier: Optional[SearchModifier])`: filter
+the query on a field; `ps2_census.SearchModifier` contains all the modifiers made available
+by the Census API (`SearchModifier.CONTAINS`, `SearchModifier.LESS_OR_EQUAL`, ...)
+- `show(*args: str)`: only return the provided fields in results
+- `hide(*args: str)`: do not return the provided fields in results
+- `sort(*args: Tuple[str, Literal[1, -1]])`: sort the results by field, either in increasing or decreasing order
+- `has(*args: str)`: only return results which have the specified fields
+- `case(arg: bool)`: whether `filter()`s are case sensive or not; default to `True`
+- `limit(arg: int)`: limit the return to *at most* `arg` results; required in tendem with `start()` for queries having too large of a result and therefore fail; defaults to `1`
+- `limit_per_db(arg: int)`: limit the return to *at most* `arg * databases count` results; useful when
+querying the `Collection.CHARACTER` collection whose objects are randomly distributed among multiple
+databases in order to have more predictable results
+- `start(arg: int)`: start with the `arg`th object within the results of the query
+- `include_null(arg: bool)`: whether to include keys with `None` values in results; defaults to `False`
+- `lang(arg: str)`: only keep the supplied language for internationalized strings
+- `join(arg: Join)`: perform a collection join; see the following documentation for additional details
+- `tree(arg: Tree)`: rearrange lists of data into trees; see the following documentation for additional details
+- `timing(arg: bool)`: show query timing information
+- `exact_match_first(arg: bool)`: when using `filter()`s with `SearchModifier`s, put exact matches at the top of the
+results list disregarding `sort()`s
+- `distinct(arg: str)`: get the distinct values for a certain field
+- `retry(arg: bool)`: retry queries at most one time before failing; defaults to `True`
 
 Execute the query in one of the 2 ways made available by the Census API:
 
@@ -60,21 +88,52 @@ query.get()
 > {'item_list': [{...}, {...}, ...], 'returned': 30}
 ```
 
+`count()` and `get()` calls are when the query is actually sent to the Census API endpoint.
+They will raise status exceptions if appropriate.
+They also take one optional argument, `print_request_url: bool` (which defaults to `False`), that
+prints the whole request URL before raising any exceptions.
+
 ### Simple join
 
-In order to perform joins instantiate the `Join` class with a `Collection` and pass it to the `Query`:
+In order to perform joins instantiate the `Join` class with a `Collection`, add any additional
+chained methods to it, and pass it to the `Query` object via `query.join()`:
 ```
 from ps2_census import Collection, Join, Query
 
 query: Query = (
-    Query(Collection.XXX)
-    .yyy()
+    Query(Collection.ITEM)
     .join(
         Join(Collection.WEAPON_DATASHEET)
         .outer(0)
         .on("item_id")
         .to("item_id")
         .inject_at("weapon_datasheet")
+        [...]
+    )
+)
+```
+
+Available `Join` methods are:
+- `nest(other: Join)`: nest another join within this one; see the following documentation for additional details
+- `on(arg: str)`: specify the field on this collection (the `Query` or parent `Join`) to join on; if not provided will default to this collection's ID (`{this_type}_id`)
+- `to(arg: str)`: specify the field on the other collection (the `Join`'s) to join to; if not provided will default to the `on` value
+- `list(arg: Literal[0, 1])`: whether the joined data is a list (and therefore will result in a list of objects) or not; `1` if it is a list, `0` if not; default to `0`
+- `show(*args: str)`: only keep the provided fields in results
+- `hide(*args: str)`: do not keep the provided fields in results
+- `inject_at(arg: str)`: the field name where the joined data will be injected in the parent element (`Query` result item or parent `Join` element)
+- `terms(**kwargs: Union[str, int])`: filter the join result by a dictionary of conditions (eg. `{"faction_id": 1, "skill_set_id": 129}`)
+- `outer(arg: Literam[0, 1])`: whether the join will perform an outer join (include non-matches) of an inner join (exclude non-matches); `1` for outer, `0` for inner; defaults to `1`
+
+Multiple joins can be performed one after another on the same `Query` and the trees will be merged in
+the result:
+```
+query: Query = (
+    Query(Collection.ITEM)
+    .join(
+        Join(Collection.WEAPON_DATASHEET)
+    )
+    .join(
+        Join(Collection.ITEM_TO_WEAPON)
     )
 )
 ```
@@ -121,38 +180,58 @@ query: Query = (
 )
 ```
 
-For a deep join you might find it easier to first create the `Join` instances then nest them
-as shown above without having too much indentation depth.
+### Lateraly nested joins
 
-
-### Lateraly nested join
-
-Lateraly nested joins are necessary in order to join between multiple collections at the same depth
-in the collections tree.
-To lateraly nest joins, instantiate the `Join` class multiple times and combine them through
+Lateraly nested joins are necessary in order to access data structures at the same depth in the collections tree.
+To laterally nest joins, instantiate the `Join` class multiple times and combine them through
 `join1.nest(join2).nest(join3)` where `join2` and `join3` are nested within `join1`:
 
 ```
 from ps2_census import Collection, Join, Query
 
-parent_join: Join = (
-    Join(Collection.PARENT)
+fire_group_to_fire_mode_join: Join = (
+    Join(Collection.FIRE_GROUP_TO_FIRE_MODE)
+    .outer(0)
+    .on("fire_group_id")
+    .to("fire_group_id")
+    .list(1)
+    .inject_at("fire_group_to_fire_modes")
 )
 
-child_1_join: Join (
-    Join(Collection.CHILD_1)
+fire_mode_join: Join = (
+    Join(Collection.FIRE_MODE_2)
+    .outer(0)
+    .on("fire_mode_id")
+    .to("fire_mode_id")
+    .inject_at("fire_mode")
 )
 
-child_2_join: Join (
-    Join(Collection.CHILD_1)
+fire_mode_to_projectile_join: Join = (
+    Join(Collection.FIRE_MODE_TO_PROJECTILE)
+    .outer(0)
+    .on("fire_mode_id")
+    .to("fire_mode_id")
+    .inject_at("fire_mode_to_projectile")
+)
+
+player_state_group_join: Join = (
+    Join(Collection.PLAYER_STATE_GROUP_2)
+    .outer(0)
+    .on("player_state_group_id")
+    .to("player_state_group_id")
+    .list(1)
+    .inject_at("player_state_groups")
 )
 
 query: Query = (
-    Query(Collection.COLLECTION)
+    Query(Collection.WEAPON_TO_FIRE_GROUP)
     .join(
-        parent_join
-        .nest(child_1_join)
-        .nest(child_2_join)
+        fire_group_to_fire_mode_join
+        .nest(
+            fire_mode_join
+            .nest(fire_mode_to_projectile_join)
+            .nest(player_state_group_join)
+        )
     )
 )
 ```
@@ -168,9 +247,18 @@ query: Query = (
     .tree(
         Tree("name.en")
         .prefix("en_name_")
+        [...]
     )
 )
 ```
+
+This will return a dictionary of items with their english name prefixed by `en_name_` as keys
+and the objects themselves as values, instead of a flat list of items.
+
+Available methods are:
+- `list(arg: Literal[0, 1])`: `0` if tree data is not a list, `1` if it is a list; defaults to `0`
+- `prefix(arg: str)`: prefix to add to the field value
+- `start(arg: str)`: where the tree starts; defaults to the root (root list objects will be formatted as a tree)
 
 ## Common enums
 
@@ -205,7 +293,7 @@ See the following example for filtering weapon items only using `ps2_census.enum
 ```
 from ps2_census.enums import ItemType
 query = (
-    Query(Collection.ITEM, service_id=YOUR_SERVICE_ID)
+    Query(Collection.ITEM)
     .filter("item_type_id", ItemType.WEAPON)
 )
 ```

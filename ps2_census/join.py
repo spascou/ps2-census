@@ -18,7 +18,11 @@ class Join:
             [f"{self.collection.value}"] + [f"{k}:{v}" for k, v in self.items.items()]
         )
 
-        return f"{res}" + "".join((f"({n.__str__()})" for n in self.nested_joins))
+        if self.nested_joins:
+            nested_res = ",".join((n.__str__() for n in self.nested_joins))
+            return res + f"({nested_res})"
+        else:
+            return res
 
     def nest(self, other):
         assert isinstance(other, Join)
