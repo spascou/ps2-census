@@ -19,7 +19,9 @@ the quirks of this particular API as this knowledge is necessary to use *ps2-cen
 
 ## Installation
 
-`pip install ps2-census`
+```sh
+pip install ps2-census
+```
 
 ## Full examples
 
@@ -44,14 +46,14 @@ Census API join is analog to a join between these relations.
 
 To build a query, instantiate the `Query` class with a `Collection` (and your service ID,
 though it will be omitted in next examples for conciseness):
-```
+```python
 from ps2_census import Collection, Query
 
 query: Query = Query(Collection.ITEM, service_id=YOUR_SERVICE_ID)
 ```
 
 Chain methods to alter the query further:
-```
+```python
 query: Query = (
     Query(Collection.ITEM)
     .lang("en")
@@ -88,13 +90,13 @@ results list disregarding `sort()`s
 Execute the query in one of the 2 ways made available by the Census API:
 
 - `.count()` to get the items count
-```
+```python
 query.count()
 > {'count': 21048}
 ```
 
 - `.get()` to get the results
-```
+```python
 query.get()
 > {'item_list': [{...}, {...}, ...], 'returned': 30}
 ```
@@ -108,7 +110,7 @@ prints the whole request URL before raising any exceptions.
 
 In order to perform joins instantiate the `Join` class with a `Collection`, add any additional
 chained methods to it, and pass it to the `Query` object via `query.join()`:
-```
+```python
 from ps2_census import Collection, Join, Query
 
 query: Query = (
@@ -137,7 +139,7 @@ Available `Join` methods are:
 
 Multiple joins can be performed one after another on the same `Query` and the trees will be merged in
 the result:
-```
+```python
 query: Query = (
     Query(Collection.ITEM)
     .join(
@@ -166,7 +168,7 @@ as necessary.
 Deeply nested join are necessary in order to access data structures deeper in the collections tree.
 To deeply nest joins, instantiate the `Join` class multiple times and combine them through
 `join1.nest(join2.nest(join3))` where `join3` is nested within `join2` and `join2` is nested within `join1`:
-```
+```python
 from ps2_census import Collection, Join, Query
 
 item_to_weapon_join: Join = (
@@ -209,7 +211,7 @@ Lateraly nested joins are necessary in order to access data structures at the sa
 To laterally nest joins, instantiate the `Join` class multiple times and combine them through
 `join1.nest(join2).nest(join3)` where `join2` and `join3` are nested within `join1`:
 
-```
+```python
 from ps2_census import Collection, Join, Query
 
 fire_group_to_fire_mode_join: Join = (
@@ -262,7 +264,7 @@ query: Query = (
 ### Tree
 
 Trees are also built using their own class, `Tree`, then passed to the `Query` object:
-```
+```python
 from ps2_census import Collection, Query, Tree
 
 query: Query = (
@@ -313,7 +315,7 @@ These typically do not change often and *ps2-census* will be updated whenever th
 They can be used just for reference, but also in queries for filtering.
 
 See the following example for filtering weapon items only using `ps2_census.enums.ItemType`:
-```
+```python
 from ps2_census.enums import ItemType
 query = (
     Query(Collection.ITEM)
@@ -333,14 +335,14 @@ we need to handle async calls.
 
 
 First you need to connect to the WebSocket endpoint; to do this, instantiate the `EventStream` class:
-```
+```python
 from ps2_census import EventStream
 
 stream: EventStream = await EventStream(service_id=YOUR_SERVICE_ID)
 ```
 
 Then, subscribe to events:
-```
+```python
 from ps2_census import CharacterEvent, WorldEvent, EventStreamWorld, GenericCharacter
 
 await stream.subscribe(
@@ -359,14 +361,14 @@ Where:
 You can perform multiple subscriptions one after another on the same `EventStream` object; they are additively merged.
 
 Finally, you need to handle received events from your subscription:
-```
+```python
 await stream.receive()
 ```
 
 This simple example put together (you might want to develop it further to do more than simply print events,
 handle graceful deconnection, etc):
 
-```
+```python
 import asyncio
 
 from ps2_census import CharacterEvent, WorldEvent, EventStream, EventStreamWorld, GenericCharacter
