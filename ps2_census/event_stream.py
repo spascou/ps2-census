@@ -7,6 +7,7 @@ import websockets
 from .constants import (
     EXAMPLE_SERVICE_ID,
     PUSH_ENDPOINT,
+    SERVICE_ID_PREFIX,
     CharacterEvent,
     EventStreamAction,
     EventStreamService,
@@ -16,7 +17,6 @@ from .constants import (
     Namespace,
     WorldEvent,
 )
-from .utils import service_id_key
 
 
 class EventStream:
@@ -31,7 +31,7 @@ class EventStream:
         namespace: Namespace = Namespace.PS2,
     ):
         self.endpoint = endpoint
-        self.service_id = service_id_key(service_id)
+        self.service_id = service_id
         self.namespace = namespace
         self._conn = None
 
@@ -39,9 +39,7 @@ class EventStream:
         return self._async_init().__await__()
 
     def _get_url(self) -> str:
-        return (
-            f"{self.endpoint}?environment={self.namespace}&service-id={self.service_id}"
-        )
+        return f"{self.endpoint}?environment={self.namespace}&service-id={SERVICE_ID_PREFIX}{self.service_id}"
 
     async def _async_init(self):
         self._conn = websockets.connect(self._get_url())

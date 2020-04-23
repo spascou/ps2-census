@@ -1,10 +1,5 @@
 from ps2_census.constants import Command
-from ps2_census.utils import bool2str, command_key, service_id_key
-
-
-def test_service_id_key():
-    res = service_id_key(service_id="someid", prefix="s:")
-    assert res == "s:someid"
+from ps2_census.utils import bool2str, command_key
 
 
 def test_command_key():

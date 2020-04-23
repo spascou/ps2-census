@@ -7,6 +7,7 @@ from .constants import (
     CENSUS_ENDPOINT,
     EXAMPLE_SERVICE_ID,
     FIELD_SEPARATOR,
+    SERVICE_ID_PREFIX,
     Collection,
     Command,
     Namespace,
@@ -15,7 +16,7 @@ from .constants import (
 )
 from .join import Join
 from .tree import Tree
-from .utils import bool2str, command_key, service_id_key
+from .utils import bool2str, command_key
 
 
 class Query:
@@ -34,7 +35,7 @@ class Query:
     ):
         self.collection = collection
         self.endpoint = endpoint
-        self.service_id = service_id_key(service_id)
+        self.service_id = service_id
         self.namespace = namespace
         self.parameters = {}
 
@@ -59,6 +60,10 @@ class Query:
 
         return False
 
+    def set_service_id(self, service_id: str):
+        self.service_id = service_id
+        return self
+
     def get_factory(self):
         self_copy = deepcopy(self)
 
@@ -68,7 +73,7 @@ class Query:
         return factory
 
     def _get_url(self, verb: Verb) -> str:
-        return f"{self.endpoint}/{self.service_id}/{verb}/{self.namespace}/{self.collection}"
+        return f"{self.endpoint}/{SERVICE_ID_PREFIX}{self.service_id}/{verb}/{self.namespace}/{self.collection}"
 
     def get(self, print_request_url: bool = False) -> dict:
         res: requests.Response = requests.get(
