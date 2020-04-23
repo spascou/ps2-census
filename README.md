@@ -2,6 +2,25 @@
 
 *ps2-census* is a low-level client for Daybreak's Planetside 2 Census API written in Python >= 3.8.
 
+   * [ps2-census](#ps2-census)
+      * [Installation](#installation)
+      * [Full examples](#full-examples)
+      * [Query building](#query-building)
+         * [Basic query](#basic-query)
+         * [Simple join](#simple-join)
+         * [Nesting joins](#nesting-joins)
+            * [Deeply nested join](#deeply-nested-join)
+            * [Lateraly nested joins](#lateraly-nested-joins)
+         * [Tree](#tree)
+      * [Common enums](#common-enums)
+      * [Event Stream](#event-stream)
+         * [Usage](#usage)
+      * [Next steps](#next-steps)
+      * [Similar projects](#similar-projects)
+      * [Development](#development)
+         * [Environment](#environment)
+         * [Technical details](#technical-details)
+
 *Features*:
 - Build queries through method chaining
 - Join collections and nest them through method chaining
