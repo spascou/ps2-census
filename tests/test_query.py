@@ -1,3 +1,5 @@
+from typing import Callable
+
 from ps2_census import Collection, Join, Namespace, Query, SearchModifier, Tree
 from ps2_census.constants import Verb
 
@@ -47,9 +49,7 @@ def test_hide():
 
 
 def test_sort():
-    query = Query(Collection.ABILITY).sort(
-        ("field1", 1), ("field2", -1)
-    )
+    query = Query(Collection.ABILITY).sort(("field1", 1), ("field2", -1))
 
     assert query.parameters == {
         "c:sort": ["field1:1,field2:-1"],
@@ -176,3 +176,41 @@ def test_retry():
     assert query_f.parameters == {
         "c:retry": ["false"],
     }
+
+
+def test_equality():
+    query1 = Query(Collection.ABILITY).retry(False)
+    query2 = Query(Collection.ABILITY).retry(False)
+
+    assert query1 == query2
+
+    query1 = query1.lang("en")
+
+    assert query1 != query2
+
+
+def test_factory():
+    query: Query = Query(Collection.ABILITY).retry(False)
+
+    factory: Callable[[], Query] = query.get_factory()
+    new_query: Query = factory()
+
+    assert new_query == query
+
+    query = query.exact_match_first(True)
+
+    assert new_query != query
+
+
+def test_factory_alteration():
+    query: Query = Query(Collection.ABILITY).retry(False)
+
+    factory: Callable[[], Query] = query.get_factory()
+    new_query: Query = factory()
+
+    assert new_query == query
+
+    new_query = new_query.exact_match_first(True)
+    new_new_query: Query = factory()
+
+    assert new_new_query == query

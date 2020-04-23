@@ -1,3 +1,5 @@
+from typing import Callable
+
 from ps2_census import Collection, Join
 
 
@@ -94,3 +96,61 @@ def test_items_lateral_nest():
         .nest(Join(Collection.CURRENCY).on("sibling"))
     )
     assert str(join) == "ability^on:parent(achievement^on:child,currency^on:sibling)"
+
+
+def test_equality():
+    nested_join = Join(Collection.ACHIEVEMENT).on("else")
+    join1 = Join(Collection.ABILITY).on("something").nest(nested_join)
+    join2 = Join(Collection.ABILITY).on("something").nest(nested_join)
+
+    assert join1 == join2
+
+    join1 = join1.to("yet")
+
+    assert join1 != join2
+
+
+def test_factory_modify_object():
+    join: Join = Join(Collection.ABILITY).on("some_key")
+    child_join: Join = Join(Collection.CURRENCY).on("another_key")
+
+    join.nest(child_join)
+
+    factory = join.get_factory()
+    new_join: Join = factory()
+
+    assert new_join == join
+
+    join = join.to("yet_another_key")
+
+    assert new_join != join
+
+
+def test_factory_modify_nested():
+    join: Join = Join(Collection.ABILITY).on("some_key")
+    child_join: Join = Join(Collection.CURRENCY).on("another_key")
+
+    join.nest(child_join)
+
+    factory: Callable[[], Join] = join.get_factory()
+    new_join: Join = factory()
+
+    assert new_join == join
+
+    child_join.to("yet_another_key")
+
+    assert new_join != join
+
+
+def test_factory_alteration():
+    join: Join = Join(Collection.ABILITY).on("some_key")
+
+    factory = join.get_factory()
+    new_join: Join = factory()
+
+    assert new_join == join
+
+    new_join = new_join.to("yet_another_key")
+    new_new_join: Join = factory()
+
+    assert new_new_join == join

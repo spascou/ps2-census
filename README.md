@@ -12,6 +12,7 @@
             * [Deeply nested join](#deeply-nested-join)
             * [Lateraly nested joins](#lateraly-nested-joins)
          * [Tree](#tree)
+      * [Factories](#factories)
       * [Common enums](#common-enums)
       * [Event Stream](#event-stream)
          * [Usage](#usage)
@@ -179,8 +180,7 @@ for convenience, as shown in the following examples.
 As nesting is done by reference and the whole structure is "compiled" (into a querystring) on the call
 to `query.join()`, if any modification is done to an instance between its creation and the resolution,
 it will indirectly impact the result of any other parent and/or nested `Join`.
-Make use of `copy.deepcopy()` from the Python standard library to make clean copies of your instances
-as necessary.
+Make use of the below described factories to make clean copies of your instances as necessary.
 
 #### Deeply nested join
 
@@ -303,6 +303,62 @@ Available methods are:
 - `list(arg: Literal[0, 1])`: `0` if tree data is not a list, `1` if it is a list; defaults to `0`
 - `prefix(arg: str)`: prefix to add to the field value
 - `start(arg: str)`: where the tree starts; defaults to the root (root list objects will be formatted as a tree)
+
+## Factories
+
+In order to ease the project-wide definition of `Query`, `Join` and `Tree` objects,
+each of these classes has a `get_factory()` method.
+
+Upon invocation it saves a copy of the current object and returns a callable that, upon each invocation,
+returns a fresh copy of that saved state.
+
+```python
+query: Query = Query(Collection.ABILITY).has("someField").case(False)
+
+query_factory: Callable[[], Query] = query.get_factory()
+
+query_copy: Query = query_factory()
+
+assert query == query_copy
+> True
+
+query = query.timing(True)
+
+assert query != query_copy
+> True
+
+query_copy = query_copy.lang("en")
+
+another_copy = query_factory()
+
+assert query == another_copy
+> True
+
+assert query_copy != another_copy
+> True
+```
+
+Factories obtained in this way are useful to define `Query`, `Join` or `Tree`s somewhere in your code and store
+their factory callables, with the guarantee that you cannot modify the shared definition anywhere.
+
+*my_module.py*
+```python
+from ps2_census import Query, Collection
+
+my_query_factory: Callable[[], Query] = (
+    Query(Collection.ABILITY)
+    .lang("en")
+    .get_factory()
+)
+```
+
+*main.py*
+```python
+from my_module import my_query_factory
+
+query: Query = my_query_factory()
+query.start(100)  # does not modify any shared object
+```
 
 ## Common enums
 

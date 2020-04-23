@@ -1,3 +1,4 @@
+from copy import deepcopy
 from typing import Literal, Union
 
 from .constants import JOIN_ITEM_DELIMITER, JOIN_VALUE_DELIMITER, Collection, JoinKey
@@ -24,6 +25,16 @@ class Join:
         else:
             return res
 
+    def __eq__(self, other):
+        if isinstance(other, Join):
+            return (
+                self.items == other.items
+                and self.collection == other.collection
+                and self.nested_joins == other.nested_joins
+            )
+
+        return False
+
     def nest(self, other):
         assert isinstance(other, Join)
         self.nested_joins.append(other)
@@ -31,6 +42,14 @@ class Join:
 
     def _add_item(self, key: JoinKey, value: Union[str, int]):
         self.items[f"{key.value}"] = f"{value}"
+
+    def get_factory(self):
+        self_copy = deepcopy(self)
+
+        def factory():
+            return deepcopy(self_copy)
+
+        return factory
 
     def on(self, arg: str):
         self._add_item(JoinKey.ON, arg)

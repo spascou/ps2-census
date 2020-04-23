@@ -1,3 +1,4 @@
+from copy import deepcopy
 from typing import Dict, List, Literal, Optional, Tuple, Union
 
 import requests
@@ -37,6 +38,35 @@ class Query:
         self.namespace = namespace
         self.parameters = {}
 
+    def _add_parameter(self, key: str, value: Union[str, int]):
+        key = f"{key}"
+        value = f"{value}"
+
+        if key not in self.parameters:
+            self.parameters[key] = [value]
+        else:
+            self.parameters[key].append(value)
+
+    def __eq__(self, other):
+        if isinstance(other, Query):
+            return (
+                self.collection == other.collection
+                and self.endpoint == other.endpoint
+                and self.service_id == other.service_id
+                and self.namespace == other.namespace
+                and self.parameters == other.parameters
+            )
+
+        return False
+
+    def get_factory(self):
+        self_copy = deepcopy(self)
+
+        def factory():
+            return deepcopy(self_copy)
+
+        return factory
+
     def _get_url(self, verb: Verb) -> str:
         return f"{self.endpoint}/{self.service_id}/{verb}/{self.namespace}/{self.collection}"
 
@@ -63,15 +93,6 @@ class Query:
         res.raise_for_status()
 
         return res.json()
-
-    def _add_parameter(self, key: str, value: Union[str, int]):
-        key = f"{key}"
-        value = f"{value}"
-
-        if key not in self.parameters:
-            self.parameters[key] = [value]
-        else:
-            self.parameters[key].append(value)
 
     def filter(
         self,
