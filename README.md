@@ -392,8 +392,13 @@ asyncio.run(main())
 More information about the Planetside2 Census event stream can be found at [here](http://census.daybreakgames.com/#what-is-websocket).
 
 ## Next steps
+
 - Improve the `EventStream` client to make it slightly higher-level (handle disconnections,
 filter events, etc)
+
+## Similar projects
+
+- *leonhard-s*' [auraxium](https://github.com/leonhard-s/auraxium)
 
 ## Development
 
