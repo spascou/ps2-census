@@ -1,6 +1,6 @@
 # ps2-census
 
-ps2-census is a low-level client for Daybreak's Planetside 2 Census API written in Python >= 3.8.
+*ps2-census* is a low-level client for Daybreak's Planetside 2 Census API written in Python >= 3.8.
 
 *Features*:
 - Build queries through method chaining
@@ -15,7 +15,7 @@ You should get your own service ID from the webside below and supply it to the c
 More information about the Census API is available on the official Census documentation [here](http://census.daybreakgames.com/).
 
 [Iridar's blog](https://iridar-mirror.knyazev.io/index.html%3Fp=4127.html) is also recommended to understand
-the quirks of this particular API as this knowledge is necessary to use ps2-census properly.
+the quirks of this particular API as this knowledge is necessary to use *ps2-census* properly.
 
 ## Installation
 
@@ -23,7 +23,7 @@ the quirks of this particular API as this knowledge is necessary to use ps2-cens
 
 ## Full examples
 
-Before diving in the details of the ps2-census client, full examples are available in the `examples` folder.
+Before diving in the details of the *ps2-census* client, full examples are available in the `examples` folder.
 
 They currently include:
 - `all_about_trac_5.py` (and the output in `all_about_trac_5.json`): building and executing a query that
@@ -148,8 +148,20 @@ query: Query = (
     )
 )
 ```
+### Nesting joins
 
-### Deeply nested join
+`Join`s can be nested one into another both deeply and lateraly. Nesting is done by reference: each `Join` instance
+contains a list of references to its nested `Join`s.
+
+*Note*: be careful about modifying the `Join` instances after their creation if you assign them to locals
+for convenience, as shown in the following examples.
+As nesting is done by reference and the whole structure is "compiled" (into a querystring) on the call
+to `query.join()`, if any modification is done to an instance between its creation and the resolution,
+it will indirectly impact the result of any other parent and/or nested `Join`.
+Make use of `copy.deepcopy()` from the Python standard library to make clean copies of your instances
+as necessary.
+
+#### Deeply nested join
 
 Deeply nested join are necessary in order to access data structures deeper in the collections tree.
 To deeply nest joins, instantiate the `Join` class multiple times and combine them through
@@ -191,7 +203,7 @@ query: Query = (
 )
 ```
 
-### Lateraly nested joins
+#### Lateraly nested joins
 
 Lateraly nested joins are necessary in order to access data structures at the same depth in the collections tree.
 To laterally nest joins, instantiate the `Join` class multiple times and combine them through
@@ -296,7 +308,7 @@ some common enumerations are provided in `ps2_census.enums` as Python enum.IntEn
 - Vehicle
 - World
 
-These typically do not change often and ps2-census will be updated whenever there is such a change.
+These typically do not change often and *ps2-census* will be updated whenever there is such a change.
 
 They can be used just for reference, but also in queries for filtering.
 
@@ -311,7 +323,7 @@ query = (
 
 ## Event Stream
 
-ps2-census offers a client that handles connection to the WebSocket endpoint, subscription
+*ps2-census* offers a client that handles connection to the WebSocket endpoint, subscription
 to various streams and reception of the events.
 
 *Note*: because the client uses the [websockets](https://github.com/aaugustin/websockets) library,
@@ -377,12 +389,47 @@ asyncio.run(main())
 
 More information about the Planetside2 Census event stream can be found at [here](http://census.daybreakgames.com/#what-is-websocket).
 
+## Next steps
+- Improve the `EventStream` client to make it slightly higher-level (handle disconnections,
+filter events, etc)
 
 ## Development
 
-In order to work on ps2-analysis:
+### Environment
+
+In order to develop *ps2-census*:
 - Setup a virtual environment with python 3.8
 - Install [poetry](https://github.com/python-poetry/poetry)
 - Install dependencies with `poetry install`
 - Run tests with `pytest`
 - Update dependencies with `poetry update`
+
+### Technical details
+
+All interaction with the Census API (except the WebSocket events stream part) is done through
+query parameters. Query bodies are always empty and all information is carried in the query URL string.
+
+*ps2-census*' objective is to wrap the building of these (often very long and complex)
+querystrings and provide a comfortable, structured programmatic interface.
+
+To achieve that, we make use of the `Query` class which:
+- on initialization sets up basic query elements such as endpoint, service ID, collection and namespace,
+- at each "command" method call adds query parameters to its `parameters` dictionary attribute,
+- at `get()` or `count()` build the actual URL and execute the query using the `requests` library.
+
+Collection joins are more complicated as they are not built as proper query parameters;
+inside the final query, each call to `query.join()` creates a new query parameter, eg.
+`...&c:join={join_string}&...` with the `join_string` being written in a specific format.
+
+Hence the `Join` class which:
+- on initialization sets up the collection,
+- at each method call adds items to its `items` dictionary attribute,
+- at each `nest()` call stores a reference to the nested `Join` instance in its `nested_joins` list attribute,
+- at `__str__()` builds the `join_string` that will become a main query's parameter value, in the specific format
+and using the `items` elements as well as recursively calling `__str__()` on `nested_joins` items.
+
+Therefore, the `join_string` is not actually computed before a call to a `Join` instance's `__str__()` method,
+and it is recursively computed across nested joins.
+
+The event streams part is more conventional, as *ps2-census* just needs to connect to a WebSocket endpoint, issue
+subscription commands in a custom but simple format and then read messages from the stream.
