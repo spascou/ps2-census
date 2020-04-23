@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ps2_census"
-version = "0.8.0"
+version = "0.8.1"
 description = "Daybreak Games Census API client for Planetside 2 (UNOFFICIAL)"
 
 license = "MIT"
