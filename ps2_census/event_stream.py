@@ -8,17 +8,18 @@ from .constants import (
     EXAMPLE_SERVICE_ID,
     PUSH_ENDPOINT,
     CharacterEvent,
-    GenericEvent,
     EventStreamAction,
     EventStreamService,
     EventStreamWorld,
+    GenericCharacter,
+    GenericEvent,
     Namespace,
     WorldEvent,
 )
 from .utils import service_id_key
 
 
-class EventStream(object):
+class EventStream:
     endpoint: str
     service_id: str
     namespace: Namespace
@@ -32,6 +33,7 @@ class EventStream(object):
         self.endpoint = endpoint
         self.service_id = service_id_key(service_id)
         self.namespace = namespace
+        self._conn = None
 
     def __await__(self):
         return self._async_init().__await__()
@@ -64,7 +66,7 @@ class EventStream(object):
     async def subscribe(
         self,
         worlds: Optional[List[EventStreamWorld]] = None,
-        characters: Optional[List[str]] = None,
+        characters: Optional[List[Union[str, GenericCharacter]]] = None,
         events: Optional[List[Union[GenericEvent, WorldEvent, CharacterEvent]]] = None,
         logical_and_characters_with_worlds: bool = False,
     ):

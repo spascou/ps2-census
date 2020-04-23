@@ -27,7 +27,10 @@ Before diving in the details of the ps2-census client, full examples are availab
 
 They currently include:
 - `all_about_trac_5.py` (and the output in `all_about_trac_5.json`): building and executing a query that
-fetches pretty much everything related that's to know about the TR TRAC-5 carbine.
+fetches pretty much everything related that's to know about the TR TRAC-5 carbine
+- `character_death_event_stream.py` (and the output in `caracter_death_event_stream.ndjson`): subscribing to
+all character death events on the SolTech server, receive at most 20 events and print them, then gracefuly
+disconnect
 
 ## Query building
 
@@ -316,49 +319,60 @@ we need to handle async calls.
 
 ### Usage
 
-`from ps2_census import EventStream`
 
 First you need to connect to the WebSocket endpoint; to do this, instantiate the `EventStream` class:
 ```
+from ps2_census import EventStream
+
 stream: EventStream = await EventStream(service_id=YOUR_SERVICE_ID)
 ```
 
 Then, subscribe to events:
 ```
-from ps2_census import CharacterEvent, WorldEvent, EventStreamWorld
+from ps2_census import CharacterEvent, WorldEvent, EventStreamWorld, GenericCharacter
 
 await stream.subscribe(
-    worlds=[EventStreamWorld.XXX, EventStreamWorld.YYY],
-    events=[WorldEvent.ZZZ, CharacterEvent.AAA],
-    characters=["1234", "5678"],
+    worlds=[EventStreamWorld.SOLTECH, EventStreamWorld.BRIGGS],
+    events=[CharacterEvent.DEATH, WorldEvent.CONTINENT_LOCK],
+    characters=[GenericCharacter.ALL, "1234", "5678"],
     logical_and_characters_with_worlds=True
 )
 ```
 Where:
 - `worlds` is a list of `EventStreamWorld` objects. Use `[EventStreamWorld.ALL]` for all worlds
 - `events` is a list of `CharacterEvent`, `WorldEvent` or `GenericEvent` objects. Use `GenericEvent.ALL` to get all events (character and world)
-- `characters` is a list of character IDs as strings
+- `characters` is a list of character IDs as strings or the special `GenericCharacter.ALL` to subscribe to all characters
 - `logical_and_characters_with_worlds` is True if you want to match all events concerning the characters *AND* the worlds; default is False, so it matches all events concerning the characters *OR* the worlds
 
 You can perform multiple subscriptions one after another on the same `EventStream` object; they are additively merged.
 
-Finally, you need to handle received events from your subscription, for example:
+Finally, you need to handle received events from your subscription:
 ```
-while True:
-    print(await stream.receive())
+await stream.receive()
 ```
 
-This simple example put together:
+This simple example put together (you might want to develop it further to do more than simply print events,
+handle graceful deconnection, etc):
 
 ```
-from ps2_census import EventStream, CharacterEvent, WorldEvent, EventStreamWorld
+import asyncio
 
-stream = await EventStream(service_id=xxx)
+from ps2_census import CharacterEvent, WorldEvent, EventStream, EventStreamWorld, GenericCharacter
 
-await stream.subscribe(worlds=[EventStreamWorld.SOLTECH], events=[WorldEvent.CONTINENT_LOCK, WorldEvent.CONTINENT_UNLOCK])
+async def main():
+    stream: EventStream = await EventStream()
 
-while True:
-    print(await stream.receive())
+    await stream.subscribe(
+        worlds=[EventStreamWorld.SOLTECH, EventStreamWorld.BRIGGS],
+        events=[CharacterEvent.DEATH, WorldEvent.CONTINENT_LOCK],
+        characters=[GenericCharacter.ALL, "1234", "5678"],
+        logical_and_characters_with_worlds=True
+    )
+
+    while True:
+        print(await stream.receive())
+
+asyncio.run(main())
 ```
 
 More information about the Planetside2 Census event stream can be found at [here](http://census.daybreakgames.com/#what-is-websocket).

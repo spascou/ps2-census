@@ -217,6 +217,10 @@ class GenericEvent(str, Enum):
     ALL = "all"
 
 
+class GenericCharacter(str, Enum):
+    ALL = "all"
+
+
 class EventStreamAction(str, Enum):
     SUBSCRIBE = "subscribe"
     ECHO = "echo"
