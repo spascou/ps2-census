@@ -1,0 +1,3497 @@
+{
+  "item_list": [
+    {
+      "description": {
+        "en": "Originally designed for spec-ops missions that can contain any number of situations, the TRAC-5's adaptability make it a solid choice for any soldier. TR use only."
+      },
+      "faction_id": "3",
+      "image_id": "5364",
+      "image_path": "/files/ps2/images/static/5364.png",
+      "image_set_id": "2851",
+      "is_default_attachment": "0",
+      "is_vehicle_weapon": "0",
+      "item_attachments": [
+        {
+          "attachment_item_id": "381",
+          "item": {
+            "description": {
+              "en": "Cert Attachment Description"
+            },
+            "faction_id": "0",
+            "image_id": "728",
+            "image_path": "/files/ps2/images/static/728.png",
+            "image_set_id": "132",
+            "is_default_attachment": "1",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "381",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Cert Attachment"
+            }
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "559",
+          "item": {
+            "description": {
+              "en": "This is the default magazine"
+            },
+            "faction_id": "0",
+            "image_id": "792",
+            "image_path": "/files/ps2/images/static/792.png",
+            "image_set_id": "197",
+            "is_default_attachment": "1",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "559",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Default Magazine"
+            }
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "562",
+          "item": {
+            "description": {
+              "en": "The TR's Rapid Target Acquisition sight provides no magnification, but uses a clear red dot sight for close-combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "1363",
+            "image_path": "/files/ps2/images/static/1363.png",
+            "image_set_id": "450",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "562",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "RTA Reflex Sight (1x)"
+            },
+            "passive_ability_id": "166",
+            "zone_effects": [
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "202",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.05",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "218",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.015",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "219",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750569",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "563",
+          "item": {
+            "description": {
+              "en": "The weapon's muzzle flash and noise generation is reduced, and the player no longer appears on the minimap when firing. In exchange, the weapon's damage falls off 20 meters sooner, and bullet velocity is reduced by 15%."
+            },
+            "faction_id": "0",
+            "image_id": "1405",
+            "image_path": "/files/ps2/images/static/1405.png",
+            "image_set_id": "463",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "563",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Suppressor"
+            },
+            "passive_ability_id": "173",
+            "zone_effects": [
+              {
+                "ability_id": "173",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "19100",
+                "param5": "1",
+                "string1": "FireMode.EffectGroup",
+                "zone_effect_id": "266",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "173",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "-5",
+                "string1": "FireGroup.ProjectileDamageFallOffStart",
+                "zone_effect_id": "1045",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "173",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "-20",
+                "string1": "FireGroup.ProjectileDamageFallOffEnd",
+                "zone_effect_id": "1046",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "173",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "-0.15",
+                "string1": "FireGroup.ProjectileSpeedMultiplier",
+                "zone_effect_id": "1047",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "173",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "0",
+                "param5": "1",
+                "string1": "FireMode.FireDetectRange",
+                "zone_effect_id": "6308",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "173",
+                "param1": "0",
+                "param2": "1",
+                "param3": "1",
+                "param4": "0",
+                "string1": "BlockSpotOnDamageTaken",
+                "zone_effect_id": "90075",
+                "zone_effect_type": {
+                  "description": "Modify the given character flag",
+                  "param1": "Operation (0=set, 1=delete, 2=increment, 3=decrement)",
+                  "param2": "ModifyValue",
+                  "param3": "Persist (0 or 1)",
+                  "param4": "OneShot (if 1, the effect will not undo the modification on effect end)",
+                  "param5": "Always Create (Inc/Dec will create/destroy if it doesn't exist.)",
+                  "string1": "CharacterFlagKey",
+                  "zone_effect_type_id": "58"
+                },
+                "zone_effect_type_id": "58"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "565",
+          "item": {
+            "description": {
+              "en": "A forward grip increases control of the weapon, reducing horizontal recoil by 25%."
+            },
+            "faction_id": "0",
+            "image_id": "1303",
+            "image_path": "/files/ps2/images/static/1303.png",
+            "image_set_id": "444",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "565",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Forward Grip"
+            },
+            "passive_ability_id": "958",
+            "zone_effects": [
+              {
+                "ability_id": "958",
+                "param1": "-1",
+                "param2": "-1",
+                "param4": "-25",
+                "string1": "FireMode.RecoilAngleMax",
+                "zone_effect_id": "966",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "958",
+                "param1": "-1",
+                "param2": "-1",
+                "param4": "-25",
+                "string1": "FireMode.RecoilAngleMin",
+                "zone_effect_id": "967",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "958",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "150",
+                "string1": "Weapon.EquipTime",
+                "zone_effect_id": "23702",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "958",
+                "param1": "-1",
+                "param2": "-1",
+                "param4": "-25",
+                "string1": "FireMode.RecoilHorizontalTolerance",
+                "zone_effect_id": "80438",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "958",
+                "param1": "-1",
+                "param2": "-1",
+                "param4": "-25",
+                "string1": "FireMode.RecoilMinXModifier",
+                "zone_effect_id": "80439",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "958",
+                "param1": "-1",
+                "param2": "-1",
+                "param4": "-25",
+                "string1": "FireMode.RecoilMaxXModifier",
+                "zone_effect_id": "80440",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "566",
+          "item": {
+            "description": {
+              "en": "A laser sight increases the user's hipfire accuracy by 33%."
+            },
+            "faction_id": "0",
+            "image_id": "1345",
+            "image_path": "/files/ps2/images/static/1345.png",
+            "image_set_id": "163",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "566",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Laser Sight"
+            },
+            "passive_ability_id": "896",
+            "zone_effects": [
+              {
+                "ability_id": "896",
+                "param1": "-1",
+                "param2": "0",
+                "param3": "-0.33",
+                "string1": "FireMode.CofMinScalar",
+                "zone_effect_id": "934",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "636",
+          "item": {
+            "description": {
+              "en": "The rail mounted Darklight Flashlight can illuminate hostile cloaked infiltrators and dark areas but the light can give away your position. <font color=\"#dc9c36\"><br> <br>The light can be turned on and off with Toggle Attachment.</font>"
+            },
+            "faction_id": "0",
+            "image_id": "1210",
+            "image_path": "/files/ps2/images/static/1210.png",
+            "image_set_id": "198",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "636",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Darklight Flashlight"
+            },
+            "passive_ability_id": "75002",
+            "zone_effects": [
+              {
+                "ability_id": "75002",
+                "param1": "40",
+                "zone_effect_id": "75007",
+                "zone_effect_type": {
+                  "description": "Set Character Status",
+                  "param1": "CharacterStatus",
+                  "zone_effect_type_id": "22"
+                },
+                "zone_effect_type_id": "22"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "823",
+          "item": {
+            "description": {
+              "en": "Nanite Systems' HS/NV scope has no magnification, but provides high contrast outlines to nearby objects and illuminates nearby soldiers."
+            },
+            "faction_id": "0",
+            "image_id": "2286",
+            "image_path": "/files/ps2/images/static/2286.png",
+            "image_set_id": "643",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "823",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "HS/NV Scope (1x)"
+            },
+            "passive_ability_id": "10030",
+            "zone_effects": [
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "6",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10030",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "1",
+                "string1": "FireMode.CanSteadySway",
+                "zone_effect_id": "10049",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0106",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10067",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.38",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10086",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "49",
+                "param5": "1",
+                "string1": "FireMode.ReticleId",
+                "zone_effect_id": "10097",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "3",
+                "param5": "1",
+                "string1": "FireMode.FullScreenEffect",
+                "zone_effect_id": "10101",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "1",
+                "string1": "FireMode.HideWeapon",
+                "zone_effect_id": "10106",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.75",
+                "string1": "FireMode.SwayAmplitudeX",
+                "zone_effect_id": "71076",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "12",
+                "string1": "FireMode.SwayPeriodX",
+                "zone_effect_id": "71077",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.25",
+                "string1": "FireMode.SwayAmplitudeY",
+                "zone_effect_id": "71078",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "4",
+                "string1": "FireMode.SwayPeriodY",
+                "zone_effect_id": "71079",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.25",
+                "string1": "FireMode.SwayInitialOffsetY",
+                "zone_effect_id": "71080",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "1",
+                "string1": "FireMode.CanSteadySway",
+                "zone_effect_id": "71081",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "100",
+                "string1": "Weapon.ToIronSightsAnimTime",
+                "zone_effect_id": "71082",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10030",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "100",
+                "string1": "Weapon.ToIronSightsTime",
+                "zone_effect_id": "71083",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "826",
+          "item": {
+            "description": {
+              "en": "The Terran MH2 features 2x magnification inside of a holographic red dot sight, giving it the advantage in urban combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "1366",
+            "image_path": "/files/ps2/images/static/1366.png",
+            "image_set_id": "451",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "826",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "MH2 Reflex Sight (2x)"
+            },
+            "passive_ability_id": "10029",
+            "zone_effects": [
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0169",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10029",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.65",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "10048",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.07",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10066",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10085",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0002",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750659",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "828",
+          "item": {
+            "description": {
+              "en": "Using a red dot reticle with 3.4x optical magnification, the TR's Holographic Dot Sight performs well in close and mid-range combat scenarios."
+            },
+            "faction_id": "0",
+            "image_id": "1378",
+            "image_path": "/files/ps2/images/static/1378.png",
+            "image_set_id": "455",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "828",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "HDS (3.4x)"
+            },
+            "passive_ability_id": "10025",
+            "zone_effects": [
+              {
+                "ability_id": "10025",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.00950000000000001",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10025",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10025",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "2.05",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "10044",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10025",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.365",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10062",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10025",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.44",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10081",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "829",
+          "item": {
+            "description": {
+              "en": "The Terran Republic's Advanced Combat Scope utilizes a triple chevron reticle and 4x magnification, making it a good choice for all-around use."
+            },
+            "faction_id": "0",
+            "image_id": "1372",
+            "image_path": "/files/ps2/images/static/1372.png",
+            "image_set_id": "453",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "829",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "ACS (4x)"
+            },
+            "passive_ability_id": "10027",
+            "zone_effects": [
+              {
+                "ability_id": "10027",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.64",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10026",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10027",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "2.65",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "10045",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10027",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.00999999999999999",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10063",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10027",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.385",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10082",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10027",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0002",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750618",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "830",
+          "item": {
+            "description": {
+              "en": "Sharpshooters have long preferred the Terran Marksman Scope, praising its simple 4x magnified crosshair for its versatility and efficiency."
+            },
+            "faction_id": "0",
+            "image_id": "1381",
+            "image_path": "/files/ps2/images/static/1381.png",
+            "image_set_id": "456",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "830",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "TMS (4x)"
+            },
+            "passive_ability_id": "10026",
+            "zone_effects": [
+              {
+                "ability_id": "10026",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.64",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10027",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10026",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "2.65",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "10046",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10026",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0102",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10064",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10026",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.415",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10083",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "1282",
+          "item": {
+            "description": {
+              "en": "Equipped with a combination chevron/crosshair reticle and 3.4x magnification capabilities, the TR's Designated Marksman Optics functions well at many ranges."
+            },
+            "faction_id": "0",
+            "image_id": "1375",
+            "image_path": "/files/ps2/images/static/1375.png",
+            "image_set_id": "454",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "1282",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "DMO (3.4x)"
+            },
+            "passive_ability_id": "2308",
+            "zone_effects": [
+              {
+                "ability_id": "2308",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.00990099999999999",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "16029",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "2308",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "2.05",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "16030",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "2308",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.44",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "16031",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "2308",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.375",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "16032",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "2308",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0002",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750596",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "9238",
+          "item": {
+            "description": {
+              "en": "A flash suppressor makes the shooter less visible to the enemy, but increases the range at which you appear on enemy minimaps by 15 meters."
+            },
+            "faction_id": "0",
+            "image_id": "1354",
+            "image_path": "/files/ps2/images/static/1354.png",
+            "image_set_id": "644",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "9238",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Flash Suppressor"
+            },
+            "passive_ability_id": "7657",
+            "zone_effects": [
+              {
+                "ability_id": "7657",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "693",
+                "param5": "1",
+                "string1": "FireMode.EffectGroup",
+                "zone_effect_id": "7928",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "7657",
+                "param1": "-1",
+                "param2": "-1",
+                "param4": "0",
+                "string1": "FireMode.RecoilMagnitudeModifier",
+                "zone_effect_id": "7929",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "7657",
+                "param1": "-1",
+                "param2": "-1",
+                "param3": "15",
+                "string1": "FireMode.FireDetectRange",
+                "zone_effect_id": "7930",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "45043",
+          "item": {
+            "description": {
+              "en": "A compensator redirects gases upward, reducing vertical recoil. The increased sound pressure will cause the player to show on the minimap from farther away, and increased weapon bulk reduces accuracy when firing from the hip."
+            },
+            "faction_id": "0",
+            "image_id": "1360",
+            "image_path": "/files/ps2/images/static/1360.png",
+            "image_set_id": "449",
+            "is_default_attachment": "1",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "45043",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Compensator"
+            }
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "46079",
+          "item": {
+            "faction_id": "0",
+            "image_id": "728",
+            "image_path": "/files/ps2/images/static/728.png",
+            "image_set_id": "132",
+            "is_default_attachment": "1",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "46079",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Default Front Sight"
+            }
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "46271",
+          "item": {
+            "faction_id": "0",
+            "image_id": "728",
+            "image_path": "/files/ps2/images/static/728.png",
+            "image_set_id": "132",
+            "is_default_attachment": "1",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "46271",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "Default Back Sight"
+            }
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "800821",
+          "item": {
+            "description": {
+              "en": "The TR's Rapid Target Acquisition sight provides no magnification, but uses a clear red dot sight for close-combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "80567",
+            "image_path": "/files/ps2/images/static/80567.png",
+            "image_set_id": "80198",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "800821",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "RTA Reflex Sight (1x) - T-Dot"
+            },
+            "passive_ability_id": "166",
+            "zone_effects": [
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "202",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.05",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "218",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.015",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "219",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750569",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "800822",
+          "item": {
+            "description": {
+              "en": "The TR's Rapid Target Acquisition sight provides no magnification, but uses a clear red dot sight for close-combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "80564",
+            "image_path": "/files/ps2/images/static/80564.png",
+            "image_set_id": "80197",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "800822",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "RTA Reflex Sight (1x) - Yellow Dot "
+            },
+            "passive_ability_id": "166",
+            "zone_effects": [
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "202",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.05",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "218",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.015",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "219",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750569",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "800823",
+          "item": {
+            "description": {
+              "en": "The TR's Rapid Target Acquisition sight provides no magnification, but uses a clear red dot sight for close-combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "80570",
+            "image_path": "/files/ps2/images/static/80570.png",
+            "image_set_id": "80199",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "800823",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "RTA Reflex Sight (1x) - Terran"
+            },
+            "passive_ability_id": "166",
+            "zone_effects": [
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "202",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.05",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "218",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.015",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "219",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750569",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "800824",
+          "item": {
+            "description": {
+              "en": "The TR's Rapid Target Acquisition sight provides no magnification, but uses a clear red dot sight for close-combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "80561",
+            "image_path": "/files/ps2/images/static/80561.png",
+            "image_set_id": "80196",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "800824",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "RTA Reflex Sight (1x) - Open Cross"
+            },
+            "passive_ability_id": "166",
+            "zone_effects": [
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "202",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.05",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "218",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.015",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "219",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "166",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750569",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "800981",
+          "item": {
+            "description": {
+              "en": "The Terran MH2 features 2x magnification inside of a holographic red dot sight, giving it the advantage in urban combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "80576",
+            "image_path": "/files/ps2/images/static/80576.png",
+            "image_set_id": "80201",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "800981",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "MH2 Reflex Sight (2x) - T-Dot"
+            },
+            "passive_ability_id": "10029",
+            "zone_effects": [
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0169",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10029",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.65",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "10048",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.07",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10066",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10085",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0002",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750659",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "800982",
+          "item": {
+            "description": {
+              "en": "The Terran MH2 features 2x magnification inside of a holographic red dot sight, giving it the advantage in urban combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "80579",
+            "image_path": "/files/ps2/images/static/80579.png",
+            "image_set_id": "80202",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "800982",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "MH2 Reflex Sight (2x) - Terran"
+            },
+            "passive_ability_id": "10029",
+            "zone_effects": [
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0169",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10029",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.65",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "10048",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.07",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10066",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10085",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0002",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750659",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "800983",
+          "item": {
+            "description": {
+              "en": "The Terran MH2 features 2x magnification inside of a holographic red dot sight, giving it the advantage in urban combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "80573",
+            "image_path": "/files/ps2/images/static/80573.png",
+            "image_set_id": "80200",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "800983",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "MH2 Reflex Sight (2x) - Open Cross"
+            },
+            "passive_ability_id": "10029",
+            "zone_effects": [
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0169",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10029",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.65",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "10048",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.07",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10066",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10085",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0002",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750659",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        },
+        {
+          "attachment_item_id": "800984",
+          "item": {
+            "description": {
+              "en": "The Terran MH2 features 2x magnification inside of a holographic red dot sight, giving it the advantage in urban combat situations."
+            },
+            "faction_id": "0",
+            "image_id": "80582",
+            "image_path": "/files/ps2/images/static/80582.png",
+            "image_set_id": "80203",
+            "is_default_attachment": "0",
+            "is_vehicle_weapon": "0",
+            "item_category_id": "143",
+            "item_id": "800984",
+            "item_type_id": "27",
+            "max_stack_size": "1",
+            "name": {
+              "en": "MH2 Reflex Sight (2x) - Yellow Dot"
+            },
+            "passive_ability_id": "10029",
+            "zone_effects": [
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0169",
+                "string1": "FireMode.FirstPersonOffsetY",
+                "zone_effect_id": "10029",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.65",
+                "string1": "FireMode.DefaultZoom",
+                "zone_effect_id": "10048",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "0.07",
+                "string1": "FireMode.FirstPersonOffsetZ",
+                "zone_effect_id": "10066",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.94",
+                "string1": "FireMode.ArmsFovScalar",
+                "zone_effect_id": "10085",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              },
+              {
+                "ability_id": "10029",
+                "param1": "-1",
+                "param2": "1",
+                "param3": "-0.0002",
+                "string1": "FireMode.FirstPersonOffsetX",
+                "zone_effect_id": "750659",
+                "zone_effect_type": {
+                  "description": "Modify Weapon Stat",
+                  "param1": "Key1 (fire group index or ammo slot) -1=All",
+                  "param2": "Key2 (fire mode index) -1=All",
+                  "param3": "Addend",
+                  "param4": "PcntAddend",
+                  "param5": "SetDirectly",
+                  "param6": "WeaponMountId",
+                  "param7": "EquipSlot",
+                  "param8": "Loadout Slot Id",
+                  "param9": "Force Skip Effect Target",
+                  "string1": "StatId",
+                  "zone_effect_type_id": "8"
+                },
+                "zone_effect_type_id": "8"
+              }
+            ]
+          },
+          "item_id": "43"
+        }
+      ],
+      "item_category_id": "8",
+      "item_id": "43",
+      "item_to_weapon": {
+        "item_id": "43",
+        "weapon": {
+          "equip_ms": "550",
+          "from_iron_sights_ms": "150",
+          "move_modifier": "1",
+          "sprint_recovery_ms": "300",
+          "to_iron_sights_ms": "150",
+          "turn_modifier": "1",
+          "unequip_ms": "250",
+          "weapon_group_id": "14",
+          "weapon_id": "16",
+          "weapon_to_fire_groups": [
+            {
+              "fire_group_id": "14",
+              "fire_group_index": "0",
+              "fire_group_to_fire_modes": [
+                {
+                  "fire_group_id": "14",
+                  "fire_mode": {
+                    "armor_penetration": "0",
+                    "automatic": "1",
+                    "cof_override": "0",
+                    "cof_pellet_spread": "0",
+                    "cof_range": "50",
+                    "cof_recoil": "0.1",
+                    "cof_scalar": "1",
+                    "cof_scalar_moving": "1",
+                    "damage_direct_effect_id": "41",
+                    "damage_head_multiplier": "1",
+                    "damage_legs_multiplier": "-0.1",
+                    "description": {
+                      "en": "Auto"
+                    },
+                    "fire_ammo_per_shot": "1",
+                    "fire_auto_fire_ms": "0",
+                    "fire_burst_count": "1",
+                    "fire_charge_up_ms": "0",
+                    "fire_delay_ms": "0",
+                    "fire_detect_range": "40",
+                    "fire_mode_id": "14",
+                    "fire_mode_to_projectile": {
+                      "fire_mode_id": "14",
+                      "projectile": {
+                        "acceleration": "0",
+                        "drag": "0",
+                        "gravity": "11.25",
+                        "lifespan": "1.5",
+                        "projectile_flight_type_id": "1",
+                        "projectile_id": "19000",
+                        "speed": "500",
+                        "speed_max": "0",
+                        "turn_rate": "0"
+                      },
+                      "projectile_id": "19000"
+                    },
+                    "fire_mode_type_id": "0",
+                    "fire_pellets_per_shot": "1",
+                    "fire_refire_ms": "80",
+                    "grief_immune": "0",
+                    "max_damage": "143",
+                    "max_damage_range": "10",
+                    "min_damage": "112",
+                    "min_damage_range": "60",
+                    "move_modifier": "1",
+                    "player_state_group_id": "2008",
+                    "player_state_groups": [
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "1.5",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "0"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "1",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "1"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "2",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "2"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "5",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "3"
+                      },
+                      {
+                        "can_iron_sight": "0",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "2",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "4"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "1.5",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "5"
+                      }
+                    ],
+                    "projectile_speed_override": "490",
+                    "recoil_angle_max": "25",
+                    "recoil_angle_min": "23",
+                    "recoil_first_shot_modifier": "2.35",
+                    "recoil_horizontal_max": "0.225",
+                    "recoil_horizontal_max_increase": "0",
+                    "recoil_horizontal_min": "0.225",
+                    "recoil_horizontal_min_increase": "0",
+                    "recoil_horizontal_tolerance": "0.55",
+                    "recoil_increase": "1",
+                    "recoil_increase_crouched": "1",
+                    "recoil_magnitude_max": "0.3",
+                    "recoil_magnitude_min": "0.3",
+                    "recoil_max_total_magnitude": "0",
+                    "recoil_recovery_acceleration": "1000",
+                    "recoil_recovery_delay_ms": "80",
+                    "recoil_recovery_rate": "18",
+                    "recoil_shots_at_min_magnitude": "1",
+                    "reload_ammo_fill_ms": "2900",
+                    "reload_chamber_ms": "1105",
+                    "reload_time_ms": "2595",
+                    "shield_bypass_pct": "0",
+                    "sprint_fire": "0",
+                    "turn_modifier": "1",
+                    "use_in_water": "0",
+                    "zoom_default": "1"
+                  },
+                  "fire_mode_id": "14",
+                  "fire_mode_index": "0"
+                },
+                {
+                  "fire_group_id": "14",
+                  "fire_mode": {
+                    "armor_penetration": "0",
+                    "automatic": "1",
+                    "cof_override": "0",
+                    "cof_pellet_spread": "0",
+                    "cof_range": "100",
+                    "cof_recoil": "0.05",
+                    "cof_scalar": "1",
+                    "cof_scalar_moving": "1",
+                    "damage_direct_effect_id": "41",
+                    "damage_head_multiplier": "1",
+                    "damage_legs_multiplier": "-0.1",
+                    "description": {
+                      "en": "Auto"
+                    },
+                    "fire_ammo_per_shot": "1",
+                    "fire_auto_fire_ms": "0",
+                    "fire_burst_count": "1",
+                    "fire_charge_up_ms": "0",
+                    "fire_delay_ms": "0",
+                    "fire_detect_range": "40",
+                    "fire_mode_id": "114",
+                    "fire_mode_to_projectile": {
+                      "fire_mode_id": "114",
+                      "projectile": {
+                        "acceleration": "0",
+                        "drag": "0",
+                        "gravity": "11.25",
+                        "lifespan": "1.5",
+                        "projectile_flight_type_id": "1",
+                        "projectile_id": "19000",
+                        "speed": "500",
+                        "speed_max": "0",
+                        "turn_rate": "0"
+                      },
+                      "projectile_id": "19000"
+                    },
+                    "fire_mode_type_id": "1",
+                    "fire_pellets_per_shot": "1",
+                    "fire_refire_ms": "80",
+                    "grief_immune": "0",
+                    "iron_sights": "1",
+                    "max_damage": "143",
+                    "max_damage_range": "10",
+                    "min_damage": "112",
+                    "min_damage_range": "60",
+                    "move_modifier": "0.5",
+                    "player_state_group_id": "2009",
+                    "player_state_groups": [
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "0.1",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "0"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "0.1",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "1"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "0.3",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "2"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "2",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "3"
+                      },
+                      {
+                        "can_iron_sight": "0",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "3",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "0",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "4"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "0.2",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "5"
+                      }
+                    ],
+                    "projectile_speed_override": "490",
+                    "recoil_angle_max": "25",
+                    "recoil_angle_min": "23",
+                    "recoil_first_shot_modifier": "2.35",
+                    "recoil_horizontal_max": "0.225",
+                    "recoil_horizontal_max_increase": "0",
+                    "recoil_horizontal_min": "0.225",
+                    "recoil_horizontal_min_increase": "0",
+                    "recoil_horizontal_tolerance": "0.55",
+                    "recoil_increase": "1",
+                    "recoil_increase_crouched": "1",
+                    "recoil_magnitude_max": "0.3",
+                    "recoil_magnitude_min": "0.3",
+                    "recoil_max_total_magnitude": "0",
+                    "recoil_recovery_acceleration": "1000",
+                    "recoil_recovery_delay_ms": "80",
+                    "recoil_recovery_rate": "18",
+                    "recoil_shots_at_min_magnitude": "1",
+                    "reload_ammo_fill_ms": "2900",
+                    "reload_chamber_ms": "1105",
+                    "reload_time_ms": "2595",
+                    "shield_bypass_pct": "0",
+                    "sprint_fire": "0",
+                    "turn_modifier": "1",
+                    "use_in_water": "0",
+                    "zoom_default": "1.35"
+                  },
+                  "fire_mode_id": "114",
+                  "fire_mode_index": "1"
+                }
+              ],
+              "weapon_id": "16"
+            },
+            {
+              "fire_group_id": "1014",
+              "fire_group_index": "1",
+              "fire_group_to_fire_modes": [
+                {
+                  "fire_group_id": "1014",
+                  "fire_mode": {
+                    "armor_penetration": "0",
+                    "automatic": "0",
+                    "cof_override": "0",
+                    "cof_pellet_spread": "0",
+                    "cof_range": "50",
+                    "cof_recoil": "0.1",
+                    "cof_scalar": "1",
+                    "cof_scalar_moving": "1",
+                    "damage_direct_effect_id": "41",
+                    "damage_head_multiplier": "1",
+                    "damage_legs_multiplier": "-0.1",
+                    "description": {
+                      "en": "Semi-Auto"
+                    },
+                    "fire_ammo_per_shot": "1",
+                    "fire_auto_fire_ms": "0",
+                    "fire_burst_count": "1",
+                    "fire_charge_up_ms": "0",
+                    "fire_delay_ms": "0",
+                    "fire_detect_range": "40",
+                    "fire_mode_id": "1014",
+                    "fire_mode_to_projectile": {
+                      "fire_mode_id": "1014",
+                      "projectile": {
+                        "acceleration": "0",
+                        "drag": "0",
+                        "gravity": "11.25",
+                        "lifespan": "1.5",
+                        "projectile_flight_type_id": "1",
+                        "projectile_id": "19000",
+                        "speed": "500",
+                        "speed_max": "0",
+                        "turn_rate": "0"
+                      },
+                      "projectile_id": "19000"
+                    },
+                    "fire_mode_type_id": "0",
+                    "fire_pellets_per_shot": "1",
+                    "fire_refire_ms": "80",
+                    "grief_immune": "0",
+                    "max_damage": "143",
+                    "max_damage_range": "10",
+                    "min_damage": "112",
+                    "min_damage_range": "60",
+                    "move_modifier": "1",
+                    "player_state_group_id": "2008",
+                    "player_state_groups": [
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "1.5",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "0"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "1",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "1"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "2",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "2"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "5",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "3"
+                      },
+                      {
+                        "can_iron_sight": "0",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "2",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "4"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "7",
+                        "cof_min": "1.5",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2008",
+                        "player_state_id": "5"
+                      }
+                    ],
+                    "projectile_speed_override": "490",
+                    "recoil_angle_max": "25",
+                    "recoil_angle_min": "23",
+                    "recoil_first_shot_modifier": "2.35",
+                    "recoil_horizontal_max": "0.225",
+                    "recoil_horizontal_max_increase": "0",
+                    "recoil_horizontal_min": "0.225",
+                    "recoil_horizontal_min_increase": "0",
+                    "recoil_horizontal_tolerance": "0.55",
+                    "recoil_increase": "1",
+                    "recoil_increase_crouched": "1",
+                    "recoil_magnitude_max": "0.3",
+                    "recoil_magnitude_min": "0.3",
+                    "recoil_max_total_magnitude": "0",
+                    "recoil_recovery_acceleration": "1000",
+                    "recoil_recovery_delay_ms": "80",
+                    "recoil_recovery_rate": "18",
+                    "recoil_shots_at_min_magnitude": "1",
+                    "reload_ammo_fill_ms": "2900",
+                    "reload_chamber_ms": "1105",
+                    "reload_time_ms": "2595",
+                    "shield_bypass_pct": "0",
+                    "sprint_fire": "0",
+                    "turn_modifier": "1",
+                    "use_in_water": "0",
+                    "zoom_default": "1"
+                  },
+                  "fire_mode_id": "1014",
+                  "fire_mode_index": "0"
+                },
+                {
+                  "fire_group_id": "1014",
+                  "fire_mode": {
+                    "armor_penetration": "0",
+                    "automatic": "0",
+                    "cof_override": "0",
+                    "cof_pellet_spread": "0",
+                    "cof_range": "100",
+                    "cof_recoil": "0.05",
+                    "cof_scalar": "1",
+                    "cof_scalar_moving": "1",
+                    "damage_direct_effect_id": "41",
+                    "damage_head_multiplier": "1",
+                    "damage_legs_multiplier": "-0.1",
+                    "description": {
+                      "en": "Semi-Auto"
+                    },
+                    "fire_ammo_per_shot": "1",
+                    "fire_auto_fire_ms": "0",
+                    "fire_burst_count": "1",
+                    "fire_charge_up_ms": "0",
+                    "fire_delay_ms": "0",
+                    "fire_detect_range": "40",
+                    "fire_mode_id": "1114",
+                    "fire_mode_to_projectile": {
+                      "fire_mode_id": "1114",
+                      "projectile": {
+                        "acceleration": "0",
+                        "drag": "0",
+                        "gravity": "11.25",
+                        "lifespan": "1.5",
+                        "projectile_flight_type_id": "1",
+                        "projectile_id": "19000",
+                        "speed": "500",
+                        "speed_max": "0",
+                        "turn_rate": "0"
+                      },
+                      "projectile_id": "19000"
+                    },
+                    "fire_mode_type_id": "1",
+                    "fire_pellets_per_shot": "1",
+                    "fire_refire_ms": "80",
+                    "grief_immune": "0",
+                    "iron_sights": "1",
+                    "max_damage": "143",
+                    "max_damage_range": "10",
+                    "min_damage": "112",
+                    "min_damage_range": "60",
+                    "move_modifier": "0.5",
+                    "player_state_group_id": "2009",
+                    "player_state_groups": [
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "0.1",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "0"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "0.1",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "1"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "0.3",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "2"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "2",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "3"
+                      },
+                      {
+                        "can_iron_sight": "0",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "3",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "0",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "4"
+                      },
+                      {
+                        "can_iron_sight": "1",
+                        "cof_grow_rate": "50",
+                        "cof_max": "3",
+                        "cof_min": "0.2",
+                        "cof_recovery_delay_ms": "0",
+                        "cof_recovery_delay_threshold": "0",
+                        "cof_recovery_rate": "20",
+                        "cof_shots_before_penalty": "0",
+                        "cof_turn_penalty": "0",
+                        "player_state_group_id": "2009",
+                        "player_state_id": "5"
+                      }
+                    ],
+                    "projectile_speed_override": "490",
+                    "recoil_angle_max": "25",
+                    "recoil_angle_min": "23",
+                    "recoil_first_shot_modifier": "2.35",
+                    "recoil_horizontal_max": "0.225",
+                    "recoil_horizontal_max_increase": "0",
+                    "recoil_horizontal_min": "0.225",
+                    "recoil_horizontal_min_increase": "0",
+                    "recoil_horizontal_tolerance": "0.55",
+                    "recoil_increase": "1",
+                    "recoil_increase_crouched": "1",
+                    "recoil_magnitude_max": "0.3",
+                    "recoil_magnitude_min": "0.3",
+                    "recoil_max_total_magnitude": "0",
+                    "recoil_recovery_acceleration": "1000",
+                    "recoil_recovery_delay_ms": "80",
+                    "recoil_recovery_rate": "18",
+                    "recoil_shots_at_min_magnitude": "1",
+                    "reload_ammo_fill_ms": "2900",
+                    "reload_chamber_ms": "1105",
+                    "reload_time_ms": "2595",
+                    "shield_bypass_pct": "0",
+                    "sprint_fire": "0",
+                    "turn_modifier": "1",
+                    "use_in_water": "0",
+                    "zoom_default": "1.35"
+                  },
+                  "fire_mode_id": "1114",
+                  "fire_mode_index": "1"
+                }
+              ],
+              "weapon_id": "16"
+            }
+          ]
+        },
+        "weapon_id": "16"
+      },
+      "item_type_id": "26",
+      "max_stack_size": "1",
+      "name": {
+        "en": "TRAC-5"
+      },
+      "skill_set_id": "126",
+      "weapon_datasheet": {
+        "capacity": "240",
+        "clip_size": "40",
+        "damage": "143",
+        "damage_max": "225",
+        "damage_min": "75",
+        "fire_cone": "1",
+        "fire_cone_max": "7",
+        "fire_cone_min": "0",
+        "fire_rate_ms": "80",
+        "fire_rate_ms_min": "60",
+        "fire_rate_mx_max": "135",
+        "item_id": "43",
+        "range": {
+          "en": "Medium"
+        },
+        "reload_ms": "2595",
+        "reload_ms_max": "3500",
+        "reload_ms_min": "1250",
+        "show_clip_size": "1",
+        "show_fire_modes": "1",
+        "show_range": "1"
+      }
+    }
+  ],
+  "returned": 1
+}

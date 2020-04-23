@@ -21,6 +21,14 @@ the quirks of this particular API as this knowledge is necessary to use ps2-cens
 
 `pip install ps2-census`
 
+## Full examples
+
+Before diving in the details of the ps2-census client, full examples are available in the `examples` folder.
+
+They currently include:
+- `all_about_trac_5.py` (and the output in `all_about_trac_5.json`): building and executing a query that
+fetches pretty much everything related that's to know about the TR TRAC-5 carbine.
+
 ## Query building
 
 Queries are made on collections with optional joins on other collections as well as various
@@ -340,9 +348,8 @@ while True:
     print(await stream.receive())
 ```
 
-More information about the Planetside2 Census event stream can be found at [here](http://census.daybreakgames.com/#what-is-websocket).
+This simple example put together:
 
-### Full example
 ```
 from ps2_census import EventStream, CharacterEvent, WorldEvent, EventStreamWorld
 
@@ -353,6 +360,9 @@ await stream.subscribe(worlds=[EventStreamWorld.SOLTECH], events=[WorldEvent.CON
 while True:
     print(await stream.receive())
 ```
+
+More information about the Planetside2 Census event stream can be found at [here](http://census.daybreakgames.com/#what-is-websocket).
+
 
 ## Development
 
