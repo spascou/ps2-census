@@ -168,7 +168,7 @@ class PlayerState(IntEnum):
     CROUCHING = 1
     RUNNING = 2
     SPRINTING = 3
-    FALLINH_LONG = 4
+    FALLING_LONG = 4
     CROUCH_WALKING = 5
 
 
