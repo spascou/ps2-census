@@ -30,6 +30,14 @@ weapon_to_fire_group_join: Join = (
     .inject_at("weapon_to_fire_groups")
 )
 
+fire_group_join: Join = (
+    Join(Collection.FIRE_GROUP)
+    .outer(0)
+    .on("fire_group_id")
+    .to("fire_group_id")
+    .inject_at("fire_group")
+)
+
 fire_group_to_fire_mode_join: Join = (
     Join(Collection.FIRE_GROUP_TO_FIRE_MODE)
     .outer(0)
@@ -120,9 +128,11 @@ trac_5_query: Query = (
         item_to_weapon_join.nest(
             weapon_join.nest(
                 weapon_to_fire_group_join.nest(
-                    fire_group_to_fire_mode_join.nest(
-                        fire_mode_join.nest(player_state_group_join).nest(
-                            fire_mode_to_projectile_join.nest(projectile_join)
+                    fire_group_join.nest(
+                        fire_group_to_fire_mode_join.nest(
+                            fire_mode_join.nest(player_state_group_join).nest(
+                                fire_mode_to_projectile_join.nest(projectile_join)
+                            )
                         )
                     )
                 )
