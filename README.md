@@ -49,7 +49,7 @@ Before diving in the details of the *ps2-census* client, full examples are avail
 
 They currently include:
 - `all_about_trac_5.py` (and the output in `all_about_trac_5.json`): building and executing a query that
-fetches pretty much everything related that's to know about the TR TRAC-5 carbine
+fetches pretty much everything that's to know about the TR TRAC-5 carbine
 - `character_death_event_stream.py` (and the output in `caracter_death_event_stream.ndjson`): subscribing to
 all character death events on the SolTech server, receive at most 20 events and print them, then gracefuly
 disconnect
