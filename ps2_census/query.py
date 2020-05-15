@@ -2,6 +2,12 @@ from copy import deepcopy
 from typing import Dict, List, Literal, Optional, Tuple, Union
 
 import requests
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 from .constants import (
     CENSUS_ENDPOINT,
@@ -75,10 +81,16 @@ class Query:
     def _get_url(self, verb: Verb) -> str:
         return f"{self.endpoint}/{SERVICE_ID_PREFIX}{self.service_id}/{verb}/{self.namespace}/{self.collection}"
 
+    @retry(
+        retry=retry_if_exception_type(ConnectionResetError),
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(),
+    )
+    def _execute_query(self, verb: Verb) -> requests.Response:
+        return requests.get(self._get_url(verb), params=self.parameters)
+
     def get(self, print_request_url: bool = False) -> dict:
-        res: requests.Response = requests.get(
-            self._get_url(Verb.GET), params=self.parameters
-        )
+        res: requests.Response = self._execute_query(Verb.GET)
 
         if print_request_url is True:
             print(res.request.url)
@@ -88,9 +100,7 @@ class Query:
         return res.json()
 
     def count(self, print_request_url: bool = False) -> dict:
-        res: requests.Response = requests.get(
-            self._get_url(Verb.COUNT), params=self.parameters
-        )
+        res: requests.Response = self._execute_query(Verb.COUNT)
 
         if print_request_url is True:
             print(res.request.url)
