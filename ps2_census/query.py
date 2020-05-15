@@ -91,8 +91,6 @@ class Query:
         res: requests.Response = requests.get(
             self._get_url(verb), params=self.parameters
         )
-        logger.debug(res.request.url)
-
         res.raise_for_status()
 
         return res
