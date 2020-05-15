@@ -101,7 +101,7 @@ class Query:
             | retry_if_exception_type(requests.exceptions.ConnectionError)
             | retry_if_exception_type(urllib3.exceptions.ProtocolError)
         ),
-        stop=stop_after_attempt(3),
+        stop=stop_after_attempt(5),
         wait=wait_exponential(),
         after=after_log(logger, logging.DEBUG),
     )
@@ -115,7 +115,7 @@ class Query:
             | retry_if_exception_type(requests.exceptions.ConnectionError)
             | retry_if_exception_type(urllib3.exceptions.ProtocolError)
         ),
-        stop=stop_after_attempt(3),
+        stop=stop_after_attempt(5),
         wait=wait_exponential(),
         after=after_log(logger, logging.DEBUG),
     )
