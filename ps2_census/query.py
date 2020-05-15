@@ -1,3 +1,4 @@
+import logging
 from copy import deepcopy
 from typing import Dict, List, Literal, Optional, Tuple, Union
 
@@ -5,6 +6,7 @@ import requests
 import requests.exceptions
 import urllib3.exceptions
 from tenacity import (
+    after_log,
     retry,
     retry_if_exception_type,
     stop_after_attempt,
@@ -25,6 +27,8 @@ from .constants import (
 from .join import Join
 from .tree import Tree
 from .utils import bool2str, command_key
+
+logger = logging.getLogger(__name__)
 
 
 class Query:
@@ -84,7 +88,14 @@ class Query:
         return f"{self.endpoint}/{SERVICE_ID_PREFIX}{self.service_id}/{verb}/{self.namespace}/{self.collection}"
 
     def _execute_query(self, verb: Verb) -> requests.Response:
-        return requests.get(self._get_url(verb), params=self.parameters)
+        res: requests.Response = requests.get(
+            self._get_url(verb), params=self.parameters
+        )
+        logger.debug(res.request.url)
+
+        res.raise_for_status()
+
+        return res
 
     @retry(
         retry=(
@@ -94,15 +105,10 @@ class Query:
         ),
         stop=stop_after_attempt(3),
         wait=wait_exponential(),
+        after=after_log(logger, logging.DEBUG),
     )
-    def get(self, print_request_url: bool = False) -> dict:
+    def get(self) -> dict:
         res: requests.Response = self._execute_query(Verb.GET)
-
-        if print_request_url is True:
-            print(res.request.url)
-
-        res.raise_for_status()
-
         return res.json()
 
     @retry(
@@ -113,15 +119,10 @@ class Query:
         ),
         stop=stop_after_attempt(3),
         wait=wait_exponential(),
+        after=after_log(logger, logging.DEBUG),
     )
-    def count(self, print_request_url: bool = False) -> dict:
+    def count(self) -> dict:
         res: requests.Response = self._execute_query(Verb.COUNT)
-
-        if print_request_url is True:
-            print(res.request.url)
-
-        res.raise_for_status()
-
         return res.json()
 
     def filter(

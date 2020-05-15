@@ -123,8 +123,6 @@ query.get()
 
 `count()` and `get()` calls are when the query is actually sent to the Census API endpoint.
 They will raise status exceptions if appropriate.
-They also take one optional argument, `print_request_url: bool` (which defaults to `False`), that
-prints the whole request URL before raising any exceptions.
 
 ### Simple join
 
