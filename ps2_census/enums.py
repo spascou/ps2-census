@@ -283,3 +283,13 @@ class World(IntEnum):
     COBALT = 13
     SOLTECH = 40
     BRIGGS = 25
+
+
+class Zone(IntEnum):
+    INDAR = 2
+    HOSSIN = 4
+    AMERISH = 6
+    ESAMIR = 8
+    VR_NC = 96
+    VR_TR = 97
+    VR_VS = 98
