@@ -109,6 +109,8 @@ def test_equality():
 
     assert join1 != join2
 
+    assert join1 != object()
+
 
 def test_factory_modify_object():
     join: Join = Join(Collection.ABILITY).on("some_key")

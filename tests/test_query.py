@@ -19,6 +19,14 @@ def test_query():
     )
 
 
+def test_service_id():
+    query = Query(Collection.ABILITY)
+    assert query.service_id == "example"
+
+    query.set_service_id("someserviceid")
+    assert query.service_id == "someserviceid"
+
+
 def test_filter():
     query = (
         Query(Collection.ABILITY)
@@ -187,6 +195,8 @@ def test_equality():
     query1 = query1.lang("en")
 
     assert query1 != query2
+
+    assert query1 != object()
 
 
 def test_factory():

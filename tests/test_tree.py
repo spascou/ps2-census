@@ -38,6 +38,8 @@ def test_equality():
 
     assert tree1 != tree2
 
+    assert tree1 != object()
+
 
 def test_factory():
     tree: Tree = Tree("field_name").start("node")
