@@ -52,11 +52,11 @@ class EventStream:
     async def receive(self):
         return json.loads(await self.websocket.recv())
 
-    async def echo(self):
+    async def echo(self, payload: Optional[dict] = None):
         message: dict = {
             "service": EventStreamService.EVENT.value,
             "action": EventStreamAction.ECHO.value,
-            "payload": {"test": "test"},
+            "payload": payload if payload is not None else {"test": "tset"},
         }
 
         await self.websocket.send(json.dumps(message))
