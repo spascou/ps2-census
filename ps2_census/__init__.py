@@ -3,6 +3,7 @@ from .constants import (  # noqa
     Collection,
     EventStreamWorld,
     GenericCharacter,
+    GenericEvent,
     Namespace,
     SearchModifier,
     WorldEvent,

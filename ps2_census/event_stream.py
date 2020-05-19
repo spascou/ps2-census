@@ -49,6 +49,9 @@ class EventStream:
     async def close(self):
         await self._conn.__aexit__(*sys.exc_info())
 
+    async def send(self, message: dict):
+        await self.websocket.send(json.dumps(message))
+
     async def receive(self):
         return json.loads(await self.websocket.recv())
 
@@ -59,7 +62,7 @@ class EventStream:
             "payload": payload if payload is not None else {"test": "tset"},
         }
 
-        await self.websocket.send(json.dumps(message))
+        await self.send(message)
 
     async def subscribe(
         self,
@@ -80,9 +83,9 @@ class EventStream:
         if events:
             message["eventNames"] = [e.value for e in events]
         if logical_and_characters_with_worlds is True:
-            message["logicalAndCharactersWithWorlds"] = "true"
+            message["logicalAndCharactersWithWorlds"] = True
 
-        await self.websocket.send(json.dumps(message))
+        await self.send(message)
 
     async def clear_subscriptions(
         self,
@@ -103,9 +106,9 @@ class EventStream:
         if events:
             message["eventNames"] = [e.value for e in events]
         if logical_and_characters_with_worlds is True:
-            message["logicalAndCharactersWithWorlds"] = "true"
+            message["logicalAndCharactersWithWorlds"] = True
 
-        await self.websocket.send(json.dumps(message))
+        await self.send(message)
 
     async def clear_all_subscriptions(self):
         message: dict = {
@@ -114,7 +117,7 @@ class EventStream:
             "all": "true",
         }
 
-        await self.websocket.send(json.dumps(message))
+        await self.send(message)
 
     async def recent_character_ids(self):
         message: dict = {
@@ -122,7 +125,7 @@ class EventStream:
             "action": EventStreamAction.RECENT_CHARACTER_IDS.value,
         }
 
-        await self.websocket.send(json.dumps(message))
+        await self.send(message)
 
     async def recent_character_ids_count(self):
         message: dict = {
@@ -130,4 +133,4 @@ class EventStream:
             "action": EventStreamAction.RECENT_CHARACTER_IDS_COUNT.value,
         }
 
-        await self.websocket.send(json.dumps(message))
+        await self.send(message)

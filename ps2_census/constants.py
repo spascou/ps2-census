@@ -4,7 +4,7 @@ CENSUS_ENDPOINT = "http://census.daybreakgames.com"
 PUSH_ENDPOINT = "wss://push.planetside2.com/streaming"
 
 SERVICE_ID_PREFIX = "s:"
-EXAMPLE_SERVICE_ID = f"example"
+EXAMPLE_SERVICE_ID = "example"
 
 
 class Namespace(str, Enum):

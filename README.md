@@ -1,3 +1,5 @@
+![coverage-badge](./badges/coverage.svg)
+
 # ps2-census
 
 *ps2-census* is a low-level client for Daybreak's Planetside 2 Census API written in Python >= 3.8.
