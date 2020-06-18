@@ -171,6 +171,8 @@ class PlayerState(IntEnum):
     SPRINTING = 3
     FALLING_LONG = 4
     CROUCH_WALKING = 5
+    JUMPING = 6
+    FALLING_SHORT = 7
 
 
 class ProjectileFlightType(IntEnum):
