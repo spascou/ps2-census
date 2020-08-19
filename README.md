@@ -154,7 +154,7 @@ Available `Join` methods are:
 - `show(*args: str)`: only keep the provided fields in results
 - `hide(*args: str)`: do not keep the provided fields in results
 - `inject_at(arg: str)`: the field name where the joined data will be injected in the parent element (`Query` result item or parent `Join` element)
-- `terms(**kwargs: Union[str, int])`: filter the join result by a dictionary of conditions (eg. `{"faction_id": 1, "skill_set_id": 129}`)
+- `terms(*args: Tuple[str, Union[str, int]])`: filter the join result by conditions (eg. `terms(("faction_id", 1), ("skill_set_id", 129))`)
 - `outer(arg: Literam[0, 1])`: whether the join will perform an outer join (include non-matches) of an inner join (exclude non-matches); `1` for outer, `0` for inner; defaults to `1`
 
 Multiple joins can be performed one after another on the same `Query` and the trees will be merged in

@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import Literal, Union
+from typing import Literal, Tuple, Union
 
 from .constants import JOIN_ITEM_DELIMITER, JOIN_VALUE_DELIMITER, Collection, JoinKey
 
@@ -77,10 +77,9 @@ class Join:
         self._add_item(JoinKey.INJECT_AT, arg)
         return self
 
-    def terms(self, **kwargs: Union[str, int]):
+    def terms(self, *args: Tuple[str, Union[str, int]]):
         self._add_item(
-            JoinKey.TERMS,
-            JOIN_VALUE_DELIMITER.join((f"{k}={v}" for k, v in kwargs.items())),
+            JoinKey.TERMS, JOIN_VALUE_DELIMITER.join((f"{k}={v}" for k, v in args)),
         )
         return self
 

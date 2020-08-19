@@ -34,7 +34,7 @@ def test_inject_at():
 
 
 def test_terms():
-    join = Join(Collection.ABILITY).terms(field1="value1", field2=2)
+    join = Join(Collection.ABILITY).terms(("field1", "value1"), ("field2", 2))
     assert str(join) == "ability^terms:field1=value1'field2=2"
 
 
